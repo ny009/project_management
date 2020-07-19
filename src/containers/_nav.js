@@ -25,7 +25,7 @@ export default [
       {
         _name: 'CSidebarNavItem',
         name: 'My Course',
-        to: '/theme/typography',
+        to: '/mycourse',
         icon: 'cil-puzzle'
       },
       {
@@ -35,20 +35,20 @@ export default [
       {
         _name: 'CSidebarNavDropdown',
         name: 'My Project',
-        route: '/base',
+        route: '/project',
         icon: 'cil-puzzle',
         items: [
           {
             name: 'project1',
-            to: '/base/breadcrumbs'
+            to: '/project/project'
           },
           {
             name: 'project1',
-            to: '/base/breadcrumbs'
+            to: '/project/project'
           },
           {
             name: 'project1',
-            to: '/base/breadcrumbs'
+            to: '/project/project'
           },
         ],
       }

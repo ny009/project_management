@@ -3,166 +3,20 @@
     <CCol col="12" md="6">
       <CCard>
         <CCardHeader>
-          <CIcon name="cil-justify-center"/>
-          <strong> Bootstrap Alert</strong>
-          <div class="card-header-actions">
-            <a 
-              href="https://coreui.io/vue/docs/components/alert" 
-              class="card-header-action" 
-              rel="noreferrer noopener" 
-              target="_blank"
-            >
-              <small class="text-muted">docs</small>
-            </a>
-          </div>
+          <CIcon name="cil-justify-center"/> Morty Al-Banna <small>20200719</small>
         </CCardHeader>
         <CCardBody>
-          <div>
-            <p></p>
-            <CAlert show color="primary">Primary Alert</CAlert>
-            <CAlert show color="secondary">Secondary Alert</CAlert>
-            <CAlert show color="success">Success Alert</CAlert>
-            <CAlert show color="danger">Danger Alert</CAlert>
-            <CAlert show color="warning">Warning Alert</CAlert>
-            <CAlert show color="info">Info Alert</CAlert>
-            <CAlert show color="light">Light Alert</CAlert>
-            <CAlert show color="dark">Dark Alert</CAlert>
-          </div>
-        </CCardBody>
-      </CCard>
-    </CCol>
-    <CCol col="12" md="6">
-      <CCard>
-        <CCardHeader>
-          <CIcon name="cil-justify-center"/> Alert
-          <small> use <code>.alert-link</code> to provide links</small>
-        </CCardHeader>
-        <CCardBody>
-          <div>
-            <CAlert show color="primary">
-              Primary Alert with <a href="#" class="alert-link">an example link</a>.
-            </CAlert>
-            <CAlert show color="secondary">
-              Secondary Alert with <a href="#" class="alert-link">an example link</a>.
-            </CAlert>
             <CAlert show color="success">
-              Success Alert with <a href="#" class="alert-link">an example link</a>.
+              <h4 class="alert-heading">Guest Lecture</h4>
+              <p align="left">
+              Dear All,<br>
+This week we are privileged to have Dr. Halvard Skogsrud from Google to talk about Go Programming Language.<br>
+Time: Thursday the 16th of July @6:00PM<br>
+Platform: Microsoft Teams<br>
+Talk Summary: The Go programming language was created at Google and revealed to the public in October 2009. Its design choices are considered controversial by many, but it has become a popular choice for open source projects. It is neither object-oriented nor functional, but contains elements of both, as well as an approach to concurrency that sets it apart from most other languages. This talk will give a whirlwind tour of Go, including its design principles and features.<br>
+BIO: Halvard Skogsrud is a Solutions Architect at Google working on Google Cloud. He has more than ten years experience as a software engineer and consultant, and he has a PhD from The University of New South Wales, Australia.
+              </p>
             </CAlert>
-            <CAlert show color="danger">
-              Danger Alert with <a href="#" class="alert-link">an example link</a>.
-            </CAlert>
-            <CAlert show color="warning">
-              Warning Alert with <a href="#" class="alert-link">an example link</a>.
-            </CAlert>
-            <CAlert show color="info">
-              Info Alert with <a href="#" class="alert-link">an example link</a>.
-            </CAlert>
-            <CAlert show color="light">
-              Light Alert with <a href="#" class="alert-link">an example link</a>.
-            </CAlert>
-            <CAlert show color="dark">
-              Dark Alert with
-              <CLink href="#" class="alert-link">an example link</CLink>
-              .
-            </CAlert>
-          </div>
-        </CCardBody>
-      </CCard>
-    </CCol>
-    <CCol col="12" md="6">
-      <CCard>
-        <CCardHeader>
-          <CIcon name="cil-justify-center"/> Alerts <small>with additional content</small>
-        </CCardHeader>
-        <CCardBody>
-          <CAlert show color="success">
-            <h4 class="alert-heading">Well done!</h4>
-            <p>
-              Aww yeah, you successfully read this important alert message.
-              This example text is going to run a bit longer so that you can see
-              how spacing within an alert works with this kind of content.
-            </p>
-            <hr>
-            <p class="mb-0">
-              Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
-            </p>
-          </CAlert>
-        </CCardBody>
-      </CCard>
-    </CCol>
-    <CCol col="12" md="6">
-      <CCard>
-        <CCardHeader>
-          <CIcon name="cil-justify-center"/> Alerts
-          <small>dismissible</small>
-        </CCardHeader>
-        <CCardBody>
-          <CAlert
-            color="secondary"
-            closeButton
-            :show.sync="alert1"
-          >
-            Dismissible Alert!
-          </CAlert>
-
-          <CAlert
-            color="secondary"
-            :show.sync="alert2"
-            class="alert-dismissible"
-          >
-            Dismissible Alert with custom button!
-            <CButton
-              class="position-absolute"
-              color="secondary"
-              style="right:10px;top: 50%;transform: translateY(-50%);"
-              @click="alert2 = false"
-            >
-              Close
-            </CButton>
-          </CAlert>
-          <CButton
-            @click="showDismissibleAlerts"
-            color="info"
-            class="m-1"
-          >
-            Show dismissible alerts
-          </CButton>
-        </CCardBody>
-      </CCard>
-      <CCard>
-        <CCardHeader>
-          <CIcon name="cil-justify-center"/> Alerts
-          <small>auto dismissible</small>
-        </CCardHeader>
-        <CCardBody>
-          <div>
-            <CAlert
-              :show.sync="dismissCountDown"
-              closeButton
-              color="warning"
-              fade
-            >
-              Alert will dismiss after
-              <strong>{{dismissCountDown}}</strong> seconds...
-            </CAlert>
-
-            <CAlert
-              :show.sync="dismissCountDown"
-              closeButton
-              color="info"
-            >
-              Alert will dismiss after {{dismissCountDown}} seconds...
-              <CProgress
-                color="info"
-                :max="dismissSecs"
-                :value="dismissCountDown"
-                height="4px"
-              />
-            </CAlert>
-            <CButton @click="showAlert" color="info" class="m-1">
-              Show alert with timer
-            </CButton>
-          </div>
         </CCardBody>
       </CCard>
     </CCol>

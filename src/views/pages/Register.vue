@@ -75,10 +75,10 @@ export default {
   methods:{
     onSubmit:function(){
       axios.post("https://project-dojo.herokuapp.com/api/v1/register",{
-        email:this.registerForm.email,
-        password:this.registerForm.password,
-        role:this.registerForm.role,
-        username:this.registerForm.username
+        "email":this.registerForm.email,
+        "password":this.registerForm.password,
+        "role":this.registerForm.role,
+        "name":this.registerForm.username
 
       },{emulateJSON:true})
       .then(function(response){

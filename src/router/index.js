@@ -8,13 +8,14 @@ const TheContainer = () => import('@/containers/TheContainer')
 const Dashboard = () => import('@/views/Dashboard')
 
 
-const Typography = () => import('@/views/theme/Typography')
+const MyCourse = () => import('@/views/MyCourse')
 
 
 
 
 // Views - Components
-const Breadcrumbs = () => import('@/views/base/Breadcrumbs')
+const Project = () => import('@/views/project/Project')
+const Myproject = () => import('@/views/project/Myproject')
 
 // Views - Notifications
 const Alerts = () => import('@/views/notifications/Alerts')
@@ -51,32 +52,27 @@ function configRoutes () {
           component: Dashboard
         },
         {
-          path: 'theme',
-          redirect: '/theme/typography',
-          name: 'Theme',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'typography',
-              name: 'Typography',
-              component: Typography
-            }
-          ]
+          path: 'MyCourse',
+          name: 'MyCourse',
+          component: MyCourse
         },
         {
-          path: 'base',
-          redirect: '/base/breadcrumbs',
-          name: 'Base',
+          path: 'project',
+          redirect: '/project/myproject',
+          name: 'Project',
           component: {
             render (c) { return c('router-view') }
           },
           children: [
             {
-              path: 'breadcrumbs',
-              name: 'Breadcrumbs',
-              component: Breadcrumbs
+              path: 'myproject',
+              name: 'Myproject',
+              component: Myproject
+            },
+            {
+              path: 'project',
+              name: 'Project',
+              component: Project
             }
           ]
         },
