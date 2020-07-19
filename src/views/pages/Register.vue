@@ -5,13 +5,14 @@
         <CCol md="7">
           <CCard class="mx-4 mb-0">
             <CCardBody class="p-6">
-              <CForm>
+              <CForm :model = "registerForm">
                 <h1>Register</h1>
                 <p class="text-muted">Create your account</p>
                 <CInput
                   placeholder="Username"
                   autocomplete="username"
                   prepend="U"
+                  v-model="registerForm.username"
                 >
                   
                 </CInput>
@@ -19,12 +20,14 @@
                   placeholder="Email"
                   autocomplete="email"
                   prepend="E"
+                  v-model="registerForm.email"
                 />
                 <CInput
                   placeholder="Password"
                   type="password"
                   autocomplete="new-password"
                   prepend="P"
+                  v-model="registerForm.password"
                 >
                   
                 </CInput>
@@ -36,15 +39,16 @@
                 >
                  
                 </CInput>
-                <CSelect
-                  placeholder="Role"
+                <CInput
+                  placeholder="role"
+                  type="role"
                   autocomplete="role"
                   prepend="R"
-                  :options="['Mentor','Student']"
-                  class="mb-4"
+                  v-model="registerForm.role"
                 >
-                </CSelect>
-                <CButton color="success" block>Create Account</CButton>
+                 
+                </CInput>
+                <CButton color="success" block @click="onSubmit()">Create Account</CButton>
               </CForm>
             </CCardBody>
           </CCard>
@@ -55,7 +59,34 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: 'Register'
+  name: 'Register',
+  data(){
+    return{
+      registerForm:{
+        username:'',
+        email:'',
+        password:'',
+        role:''
+      }
+    }
+  },
+  methods:{
+    onSubmit:function(){
+      axios.post("https://project-dojo.herokuapp.com/api/v1/register",{
+        email:this.registerForm.email,
+        password:this.registerForm.password,
+        role:this.registerForm.role,
+        username:this.registerForm.username
+
+      },{emulateJSON:true})
+      .then(function(response){
+        console.log(response.data);
+      },function(error){
+        console.log(error);
+      })
+    }
+  }
 }
 </script>

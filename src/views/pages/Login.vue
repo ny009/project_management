@@ -10,9 +10,9 @@
                   <h1>Login</h1>
                   <p class="text-muted">Sign In to your account</p>
                   <CInput
-                    placeholder="Username"
-                    autocomplete="username email"
-                    v-model="formInline.user"
+                    placeholder="email"
+                    autocomplete="email"
+                    v-model="formInline.email"
                   >
                     <template #prepend-content><CIcon name="cil-user"/></template>
                   </CInput>
@@ -21,6 +21,14 @@
                     type="password"
                     autocomplete="curent-password"
                     v-model="formInline.password"
+                  >
+                    <template #prepend-content><CIcon name="cil-lock-locked"/></template>
+                  </CInput>
+                  <CInput
+                    placeholder="role"
+                    type="role"
+                    autocomplete="role"
+                    v-model="formInline.role"
                   >
                     <template #prepend-content><CIcon name="cil-lock-locked"/></template>
                   </CInput>
@@ -68,19 +76,23 @@ export default {
   data(){
     return{
       formInline:{
-        user:'',
-        password:''
+        email:'',
+        password:'',
+        role:''
       }
     }
   },
   methods:{
     onSubmit:function(){
       axios.post("https://httpbin.org/post",{
-        uname:this.formInline.user,
-        pw:this.formInline.password
+        email:this.formInline.email,
+        password:this.formInline.password,
+        role:this.formInline.role
+
       },{emulateJSON:true})
       .then(function(response){
-        console.log(response.data);
+        console.log(response.data.email);
+        alert('success');
       },function(error){
         console.log(error);
       })
