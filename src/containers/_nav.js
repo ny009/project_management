@@ -20,35 +20,29 @@ export default [
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Course']
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'My Course',
-        to: '/mycourse',
-        icon: 'cil-puzzle'
-      },
-      {
-        _name: 'CSidebarNavTitle',
         _children: ['Project']
       },
       {
+        _name: 'CSidebarNavItem',
+        name: 'My project',
+        to: '/project/Myproject',
+        icon: 'cil-puzzle',
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'All project',
+        to: '/project/Allproject',
+        icon: 'cil-puzzle',
+      },
+      {
         _name: 'CSidebarNavDropdown',
-        name: 'My Project',
+        name: 'project',
         route: '/project',
         icon: 'cil-puzzle',
         items: [
           {
-            name: 'project1',
-            to: '/project/project'
-          },
-          {
-            name: 'project1',
-            to: '/project/project'
-          },
-          {
-            name: 'project1',
-            to: '/project/project'
+            name: 'create project',
+            to: '/project/Createproject'
           },
         ],
       }

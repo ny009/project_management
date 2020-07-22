@@ -8,7 +8,7 @@ const TheContainer = () => import('@/containers/TheContainer')
 const Dashboard = () => import('@/views/Dashboard')
 
 
-const MyCourse = () => import('@/views/MyCourse')
+
 
 
 
@@ -16,6 +16,9 @@ const MyCourse = () => import('@/views/MyCourse')
 // Views - Components
 const Project = () => import('@/views/project/Project')
 const Myproject = () => import('@/views/project/Myproject')
+const Allproject = () => import('@/views/project/Allproject')
+const Createproject = () => import('@/views/project/Createproject')
+const Projectdetail = () => import('@/views/project/Projectdetail')
 
 // Views - Notifications
 const Alerts = () => import('@/views/notifications/Alerts')
@@ -52,11 +55,6 @@ function configRoutes () {
           component: Dashboard
         },
         {
-          path: 'MyCourse',
-          name: 'MyCourse',
-          component: MyCourse
-        },
-        {
           path: 'project',
           redirect: '/project/myproject',
           name: 'Project',
@@ -70,10 +68,15 @@ function configRoutes () {
               component: Myproject
             },
             {
-              path: 'project',
-              name: 'Project',
-              component: Project
-            }
+              path: 'allproject',
+              name: 'Allproject',
+              component: Allproject
+            },
+            {
+              path: 'createproject',
+              name: 'Createproject',
+              component: Createproject
+            },
           ]
         },
         {
