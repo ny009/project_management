@@ -45,6 +45,26 @@ export default [
             to: '/project/Createproject'
           },
         ],
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'team',
+        route: '/team',
+        icon: 'cil-puzzle',
+        items: [
+          {
+            name: 'create team',
+            to: '/team/Createteam'
+          },
+          {
+            name: 'All team',
+            to: '/team/Allteam'
+          },
+          {
+            name: 'My team',
+            to: '/team/Myteam'
+          },
+        ],
       }
     ]
   }

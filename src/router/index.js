@@ -23,6 +23,11 @@ const Projectdetail = () => import('@/views/project/Projectdetail')
 // Views - Notifications
 const Alerts = () => import('@/views/notifications/Alerts')
 
+//View Team
+const Allteam = () => import('@/views/team/Allteam')
+const Myteam = () => import('@/views/team/Myteam')
+const Createteam = () => import('@/views/team/Createteam')
+
 
 // Views - Pages
 const Page404 = () => import('@/views/pages/Page404')
@@ -76,6 +81,31 @@ function configRoutes () {
               path: 'createproject',
               name: 'Createproject',
               component: Createproject
+            },
+          ]
+        },
+        {
+          path: 'team',
+          redirect: '/team/Allteam',
+          name: 'Team',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: 'allteam',
+              name: 'Allteam',
+              component: Allteam
+            },
+            {
+              path: 'myteam',
+              name: 'Myteam',
+              component: Myteam
+            },
+            {
+              path: 'createteam',
+              name: 'Createteam',
+              component: Createteam
             },
           ]
         },
