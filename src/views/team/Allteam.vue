@@ -7,55 +7,53 @@
     </CCardHeader>
     <CCardBody>
       <CDataTable
-        :hover="hover"
-        :striped="striped"
-        :border="border"
-        :small="small"
-        :fixed="fixed"
-        :items="items"
-        :fields="fields"
-        :items-per-page="small ? 10 : 5"
-        :dark="dark"
-        pagination
-      >
-        <template #status="{item}">
-          <td>
-            <CBadge :color="getBadge(item.status)">{{item.status}}</CBadge>
-          </td>
-        </template>
-      </CDataTable>
+              class="mb-0 table-outline"
+              hover
+              :items="tableItems"
+              :fields="tableFields"
+              head-color="light"
+              no-sorting
+            >
+            </CDataTable>
     </CCardBody>
   </CCard>
 </template>
 
 <script>
 export default {
-  name: 'Table',
-  props: {
-    items: Array,
-    fields: {
-      type: Array,
-      default () {
-        return ['username', 'registered', 'role', 'status']
-      }
-    },
-    caption: {
-      type: String,
-      default: 'Table'
-    },
-    hover: Boolean,
-    striped: Boolean,
-    border: Boolean,
-    small: Boolean,
-    fixed: Boolean,
-    dark: Boolean
-  },
-  methods: {
-    getBadge (status) {
-      return status === 'Active' ? 'success'
-        : status === 'Inactive' ? 'secondary'
-          : status === 'Pending' ? 'warning'
-            : status === 'Banned' ? 'danger' : 'primary'
+  name: 'ListGroups',
+  data () {
+    return {
+      tableItems: [
+        {
+          team_name: 'Team1',
+          project: 'Project-based Learning Dojo',
+          num_team: '5',
+          description: 'Work hard'
+        },
+        {
+          team_name: 'Team2',
+          project: 'Project-based Learning Dojo',
+          num_team: '5',
+          description: 'Work hard'
+        },
+        {
+          team_name: 'Team3',
+          project: 'Project-based Learning Dojo',
+          num_team: '5',
+          description: 'Work hard'
+        },
+        {
+          team_name: 'Team4',
+          project: 'Project-based Learning Dojo',
+          num_team: '5',
+          description: 'Work hard'
+        }
+      ],
+      tableFields: [{ key: 'team_name', label: 'Team Name'}, 
+      { key: 'project', label: 'Project'},
+      { key: 'num_team', label: 'Number of team members'},
+      { key: 'description',label: 'Team description'}]
     }
   }
 }
