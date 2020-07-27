@@ -1,7 +1,7 @@
 <template>
   <div>
     <CRow>
-      <CCol md="6">
+      <CCol>
         <CCard>
           <CCardHeader>
             <strong>Create A Project</strong>
