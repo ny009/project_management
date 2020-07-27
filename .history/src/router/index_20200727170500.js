@@ -52,7 +52,7 @@ function configRoutes () {
   return [
     {
       path: '/',
-      redirect: '/pages/login',
+      redirect: '/dashboard',
       name: 'Home',
       component: TheContainer,
       children: [
@@ -172,6 +172,10 @@ function configRoutes () {
           component: Register
         }
       ]
+    },
+    {
+      path: '*',    // 此处需特别注意至于最底部
+      redirect: '/pages/404'
     }
   ]
 }

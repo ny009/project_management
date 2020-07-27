@@ -95,9 +95,6 @@ export default {
         console.log(response.data);
         alert('success');
         localStorage.uid = response.data.id;
-        localStorage.role = this.formInline.role;
-        localStorage.username = response.data.name;
-        localStorage.email = this.formInline.email;
         self.$router.push('../dashboard');
       },function(error){
         alert('fail');

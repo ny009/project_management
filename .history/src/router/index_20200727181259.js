@@ -172,6 +172,10 @@ function configRoutes () {
           component: Register
         }
       ]
+    },
+    {
+      path: '*',    // 此处需特别注意至于最底部
+      redirect: '/pages/404'
     }
   ]
 }

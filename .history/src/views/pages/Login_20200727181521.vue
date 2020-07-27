@@ -38,7 +38,7 @@
                     </CCol>
                     <CCol col="6" class="text-right">
                       <CButton color="link" class="px-0">Forgot password?</CButton>
-                      <a href="/#/pages/register"><CButton color="link" class="d-lg-none">Register now!</CButton></a>
+                      <a href:"/#/pages/register"><CButton color="link" class="d-lg-none">Register now!</CButton>
                     </CCol>
                   </CRow>
                 </CForm>
@@ -84,7 +84,6 @@ export default {
   },
   methods:{
     onSubmit:function(){
-      var self = this;
       axios.post("https://project-dojo.herokuapp.com/api/v2/login",{
         email:this.formInline.email,
         password:this.formInline.password,
@@ -94,11 +93,6 @@ export default {
       .then(function(response){
         console.log(response.data);
         alert('success');
-        localStorage.uid = response.data.id;
-        localStorage.role = this.formInline.role;
-        localStorage.username = response.data.name;
-        localStorage.email = this.formInline.email;
-        self.$router.push('../dashboard');
       },function(error){
         alert('fail');
         console.log(error);

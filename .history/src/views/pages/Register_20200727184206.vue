@@ -82,13 +82,11 @@ export default {
 
       },{emulateJSON:true})
       .then(function(response){
-        alert('sss');
-        alert('tee');
+        alert('success');
         console.log(response.data);
         localStorage.setItem('uid', response.data.id);
         test = localStorage.getItem('uid');
         console.log(test);
-        console.log('success');
         alert(test);
         alert(22);
       },function(error){

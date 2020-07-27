@@ -82,7 +82,7 @@ export default {
 
       },{emulateJSON:true})
       .then(function(response){
-        alert('sss');
+        alert('success');
         alert('tee');
         console.log(response.data);
         localStorage.setItem('uid', response.data.id);

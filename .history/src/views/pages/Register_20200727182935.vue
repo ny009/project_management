@@ -82,15 +82,13 @@ export default {
 
       },{emulateJSON:true})
       .then(function(response){
-        alert('sss');
-        alert('tee');
+        alert('success');
         console.log(response.data);
-        localStorage.setItem('uid', response.data.id);
-        test = localStorage.getItem('uid');
-        console.log(test);
-        console.log('success');
-        alert(test);
-        alert(22);
+        if(localStorage.uid){
+          localStorage.uid = response.data.id;
+          localStorage.username=response.data.name;
+        }
+        alert(localStorage);
       },function(error){
         alert('fail');
         console.log(error);

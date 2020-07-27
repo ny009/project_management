@@ -84,7 +84,6 @@ export default {
   },
   methods:{
     onSubmit:function(){
-      var self = this;
       axios.post("https://project-dojo.herokuapp.com/api/v2/login",{
         email:this.formInline.email,
         password:this.formInline.password,
@@ -93,12 +92,10 @@ export default {
       },{emulateJSON:true})
       .then(function(response){
         console.log(response.data);
-        alert('success');
+        alert('qqq');
         localStorage.uid = response.data.id;
-        localStorage.role = this.formInline.role;
-        localStorage.username = response.data.name;
-        localStorage.email = this.formInline.email;
-        self.$router.push('../dashboard');
+        alert(localStorage.uid);
+        alert('qqq');
       },function(error){
         alert('fail');
         console.log(error);

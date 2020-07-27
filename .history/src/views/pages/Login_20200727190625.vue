@@ -93,12 +93,11 @@ export default {
       },{emulateJSON:true})
       .then(function(response){
         console.log(response.data);
-        alert('success');
+        alert('qqq');
         localStorage.uid = response.data.id;
-        localStorage.role = this.formInline.role;
-        localStorage.username = response.data.name;
-        localStorage.email = this.formInline.email;
-        self.$router.push('../dashboard');
+        alert(localStorage.uid);
+        alert('qqq');
+        self.$router.push('/#/dashboard');
       },function(error){
         alert('fail');
         console.log(error);
