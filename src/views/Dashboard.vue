@@ -8,9 +8,11 @@
             <div class="small text-muted">20200719</div>
           </CCol>
           <CCol sm="7" class="d-none d-md-block">
+            <a href="/#/notifications/createannouncement">
             <CButton color="primary" class="float-right">
-              Notification
+              New Notification
             </CButton>
+            </a>
           </CCol>
         </CRow>
       </CCardBody>

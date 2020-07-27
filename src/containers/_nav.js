@@ -24,47 +24,31 @@ export default [
       },
       {
         _name: 'CSidebarNavItem',
+        name: 'All project',
+        to: '/project/Allproject',
+        icon: 'cil-puzzle',
+      },      
+      {
+        _name: 'CSidebarNavItem',
         name: 'My project',
         to: '/project/Myproject',
         icon: 'cil-puzzle',
       },
       {
+        _name: 'CSidebarNavTitle',
+        _children: ['My Time']
+      },
+      {
         _name: 'CSidebarNavItem',
-        name: 'All project',
-        to: '/project/Allproject',
+        name: 'My Schedule',
+        to: '/team/allschedule',
         icon: 'cil-puzzle',
-      },
+      },      
       {
-        _name: 'CSidebarNavDropdown',
-        name: 'project',
-        route: '/project',
+        _name: 'CSidebarNavItem',
+        name: 'My Task',
+        to: '/team/alltask',
         icon: 'cil-puzzle',
-        items: [
-          {
-            name: 'create project',
-            to: '/project/Createproject'
-          },
-        ],
-      },
-      {
-        _name: 'CSidebarNavDropdown',
-        name: 'team',
-        route: '/team',
-        icon: 'cil-puzzle',
-        items: [
-          {
-            name: 'create team',
-            to: '/team/Createteam'
-          },
-          {
-            name: 'All team',
-            to: '/team/Allteam'
-          },
-          {
-            name: 'My team',
-            to: '/team/Myteam'
-          },
-        ],
       }
     ]
   }

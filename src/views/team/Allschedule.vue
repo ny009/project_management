@@ -3,34 +3,10 @@
   <CCard>
     <CCardHeader>
       <slot name="header">
-        <CIcon name="cil-grid"/> <strong>Team</strong>
+        <CIcon name="cil-grid"/><strong>Schedule</strong>
       </slot>
     </CCardHeader>
     <CCardBody>
-      <div>
-        <CCard>
-          <CCardHeader>
-            My team
-            <div class="card-header-actions">
-              <a 
-                href="/#/team/myteam" 
-                class="card-header-action" 
-              >
-                <CButton size="sm" color="primary">View My Team</CButton>
-              </a>
-              <a 
-                href="/#/team/createteam" 
-                class="card-header-action" 
-              >
-                <CButton size="sm" color="primary">Create A New Team</CButton>
-              </a>
-            </div>
-          </CCardHeader>
-          <CCardBody>
-            {{loremIpsum}}
-          </CCardBody>
-        </CCard>
-      </div>
       <CDataTable
               class="mb-0 table-outline"
               hover

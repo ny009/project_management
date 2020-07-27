@@ -185,11 +185,12 @@
     <CCol md="8">
             <CCard>
           <CCardHeader>
-            <CIcon name="cil-justify-center"/><strong> Schedule </strong>
+            <CIcon name="cil-justify-center"/><strong> Team Work </strong>
           </CCardHeader>
           <CCardBody>
                 <CTabs>
-              <CTab title="create a Milestone" active>
+              <CTab title="Create a Milestone" active>
+              <br>
 <CForm>
               <CInput
                 description="Please name the Milestone."
@@ -218,57 +219,34 @@
             </CForm>
             
               </CTab>
-              <CTab title="plan a meeting" active>
+              <CTab title="Plan Team Schedule" active>
+              <br>
 <CForm>
               <CInput
-                description="Please name the Milestone."
-                label="Milestone Name"
+                description="Team ID."
+                label="Team ID"
                 horizontal
-                autocomplete="projectname"
+                autocomplete="teamid"
               />
               <CInput
-                label="Start Date"
+                label="Date"
                 type="date"
                 horizontal
               />
               <CInput
-                label="End Date"
-                type="date"
-                horizontal
-              />
-              <CTextarea
-                label="Description"
-                placeholder="Description"
-                horizontal
-                rows="9"
-              />
-            <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
-            <CButton type="reset" size="sm" color="danger"><CIcon name="cil-ban"/> Reset</CButton>
-            </CForm>
-              </CTab>
-                <CTab title="book a consultation" active>
-<CForm>
-              <CInput
-                description="Please name the Milestone."
-                label="Milestone Name"
-                horizontal
-                autocomplete="projectname"
-              />
-              <CInput
-                label="Start Date"
-                type="date"
+                label="Start Time"
+                description="like 3:15"
                 horizontal
               />
               <CInput
-                label="End Date"
-                type="date"
+                label="End Time"
+                description="like 3:15"
                 horizontal
               />
-              <CTextarea
-                label="Description"
-                placeholder="Description"
+              <CInput
+                label="Type"
+                description="meeting or consultation"
                 horizontal
-                rows="9"
               />
             <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
             <CButton type="reset" size="sm" color="danger"><CIcon name="cil-ban"/> Reset</CButton>

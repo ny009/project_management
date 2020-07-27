@@ -1,14 +1,25 @@
 <template>
   <div>
     <CRow>
+    <CCol>
+        <CCard>
+            <CCardHeader>
+            <strong> Project </strong>
+            </CCardHeader>
+            <CCardBody>
+                <a href="/#/project/Createproject"><CButton color="primary" size="sm">New Project</CButton></a>
+            </CCardBody>
+        </CCard>
+        </CCol>
+    </CRow>
+    <CRow>
         <CCard>
           <CCardHeader>
 
             <strong>{{projectname}}</strong>
             <div class="card-header-actions">
               <a 
-                href="/" 
-                target="_blank"
+                href="/#/team/allteam" 
               >
                 <CButton color="primary" size="sm">Enroll</CButton>
               </a>

@@ -1,7 +1,7 @@
 <template>
   <CRow>
       <CCol sm="6" lg="3">
-      <a href="/" >
+      <a href="/#/team/myteam" >
         <CWidgetProgress
           header="COMP9323"
           text="Software as a Service Project"
@@ -12,7 +12,7 @@
         </a>
       </CCol>
             <CCol sm="6" lg="3">
-            <a href="/" >
+            <a href="/#/team/myteam" >
         <CWidgetProgress
           header="COMP9323"
           text="Software as a Service Project"
@@ -24,7 +24,7 @@
       </CCol>
       
             <CCol sm="6" lg="3">
-        <a href="/" >    
+        <a href="/#/team/myteam" >    
         <CWidgetProgress
           header="COMP9323"
           text="Software as a Service Project"
@@ -35,7 +35,7 @@
         </a>
       </CCol>
             <CCol sm="6" lg="3">
-            <a href="/" >
+            <a href="/#/team/myteam" >
         <CWidgetProgress
           header="COMP9323"
           text="Software as a Service Project"

@@ -22,12 +22,14 @@ const Projectdetail = () => import('@/views/project/Projectdetail')
 
 // Views - Notifications
 const Alerts = () => import('@/views/notifications/Alerts')
+const Createannouncement = () => import('@/views/notifications/Createannouncement')
 
 //View Team
 const Allteam = () => import('@/views/team/Allteam')
 const Myteam = () => import('@/views/team/Myteam')
 const Createteam = () => import('@/views/team/Createteam')
-
+const Allschedule = () => import('@/views/team/Allschedule')
+const Alltask = () => import('@/views/team/Alltask')
 
 // Views - Pages
 const Page404 = () => import('@/views/pages/Page404')
@@ -107,6 +109,16 @@ function configRoutes () {
               name: 'Createteam',
               component: Createteam
             },
+            {
+              path: 'allschedule',
+              name: 'Allschedule',
+              component: Allschedule
+            },
+            {
+              path: 'alltask',
+              name: 'Alltask',
+              component: Alltask
+            }
           ]
         },
         {
@@ -121,7 +133,12 @@ function configRoutes () {
               path: 'alerts',
               name: 'Alerts',
               component: Alerts
-            }
+            },
+            {
+              path: 'createannouncement',
+              name: 'Createannouncement',
+              component: Createannouncement
+            },
           ]
         }
       ]
@@ -155,6 +172,10 @@ function configRoutes () {
           component: Register
         }
       ]
+    },
+    {
+      path: '*',    // 此处需特别注意至于最底部
+      redirect: '/pages/404'
     }
   ]
 }

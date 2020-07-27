@@ -1,4 +1,9 @@
 <template>
+    <CRow>
+      <CCol>
+                <a href=""><CButton color="primary" size="sm">New Announcement</CButton></a>
+        </CCol>
+    </CRow>
   <CRow>
     <CCol col="12" md="6">
       <CCard>
@@ -28,9 +33,22 @@ export default {
   name: 'Alerts',
   data () {
     return {
+      dismissSecs: 10,
+      dismissCountDown: 10,
+      alert1: true,
+      alert2: true
     }
   },
   methods: {
+    countDownChanged (dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
+    showAlert () {
+      this.dismissCountDown = this.dismissSecs
+    },
+    showDismissibleAlerts () {
+      ['alert1', 'alert2'].forEach(alert => this[alert] = true)
+    }
   }
 }
 </script>
