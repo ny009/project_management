@@ -16,22 +16,23 @@
       <CCol md="12">
         <CCard>
           <CCardHeader>
-            <h4>Course: COMP9323</h4>
-            <h6>{{p.title}}</h6>
+            <h3>Course: COMP9323</h3>
+            <strong>{{p.title}}</strong>
+            <div class="card-header-actions">
+              <a 
+                href="/#/team/allteam" 
+              >
+                <CButton color="primary" size="sm">Enroll</CButton>
+              </a>
+            </div>
           </CCardHeader>
           <CCardBody>
             {{p.outline}}
-          </CCardBody>
-          <CCardFooter>
+            <hr>
             <strong>Start Date:</strong> {{p.start_date}}
             <br>
             <strong>End Date:</strong> {{p.end_date}}
-            <div style="float:right">
-            <a href="/#/team/allteam" >
-                <CButton color="primary" size="sm">Enroll</CButton>
-            </a>
-            </div>
-          </CCardFooter>
+          </CCardBody>
         </CCard>
       </CCol>
     </CRow>

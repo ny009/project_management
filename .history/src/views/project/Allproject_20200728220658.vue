@@ -21,16 +21,17 @@
           </CCardHeader>
           <CCardBody>
             {{p.outline}}
-          </CCardBody>
-          <CCardFooter>
+            <hr>
             <strong>Start Date:</strong> {{p.start_date}}
             <br>
             <strong>End Date:</strong> {{p.end_date}}
-            <div style="float:right">
-            <a href="/#/team/allteam" >
+          </CCardBody>
+          <CCardFooter>
+                          <a 
+                href="/#/team/allteam" 
+              >
                 <CButton color="primary" size="sm">Enroll</CButton>
-            </a>
-            </div>
+              </a>
           </CCardFooter>
         </CCard>
       </CCol>

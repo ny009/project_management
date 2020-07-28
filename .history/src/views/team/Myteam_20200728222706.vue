@@ -2,7 +2,7 @@
   <div>
     <CRow>
     <CCol md="9">
-        <CCard>
+            <CCard>
           <CCardHeader>
             <CIcon name="cil-justify-center"/><strong> My Team </strong>
           </CCardHeader>
@@ -45,27 +45,30 @@
           color="success"
           class="mb-2"
         />
-        <strong> Due Date: </strong>2020-07-01 <strong>Status: </strong>Finished <strong>Mark: </strong>80
+              <small> Due Date: 2020-07-01 status: finished mark: 80</small><br>
         </div>
         </div>
-        <hr>
       <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Phase 2 presentation(Team): </strong>
+      <strong>Phase 2 presentation(Team): </strong><br>
+      <small> Due Date: 2020-07-30</small><br>
+      <small> status: processing</small><br>
+      <small> mark: not yet marked</small><br>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value="75"
+          :value="80"
           color="info"
           class="mb-2"
         />
-        <strong> Due Date: </strong>2020-07-30 <strong>Status: </strong>processing <strong>Mark: </strong>not yet marked
         </div>
         </div>
-        <hr>
-      <div class="row mb-1">
+              <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Peer review(Team): </strong>
+      <strong>Peer review(Team): </strong><br>
+      <small> Due Date: 2020-08-03</small><br>
+      <small> status: processing</small><br>
+      <small> mark: not yet marked</small><br>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
@@ -73,13 +76,14 @@
           color="warning"
           class="mb-2"
         />
-        <strong> Due Date: </strong>2020-08-03 <strong>Status: </strong>processing <strong>Mark: </strong>not yet marked
         </div>
         </div>
-        <hr>
-      <div class="row mb-1">
+              <div class="row mb-1">
       <div class="col-sm-2">
-      <strong>Phase 3(Team): </strong>
+      <strong>Phase 3(Team): </strong><br>
+      <small> Due Date: 2020-08-20</small><br>
+      <small> status: not yet started</small><br>
+      <small> mark: not yet started</small><br>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
@@ -87,44 +91,10 @@
           color="danger"
           class="mb-2"
         />
-        <strong> Due Date: </strong>2020-08-20 <strong>Status: </strong>not yet started <strong>Mark: </strong>not yet marked
         </div>
         </div>
       </CCardBody>
     </CCard>
-    <CCard>
-          <CCardHeader>
-            <CIcon name="cil-justify-center"/><strong> Task list </strong>
-          </CCardHeader>
-          <CCardBody>
-            <CTabs>
-              <CTab title="Phase1" active>
-                <br>
-                <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                </p>
-              </CTab>
-              <CTab title="Phase2" active>
-                <br>
-                <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                </p>
-              </CTab>
-                <CTab title="Phase3" active>
-                <br>
-                <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                </p>
-              </CTab>
-            </CTabs>
-          </CCardBody>
-        </CCard>
                 <CCard>
           <CCardHeader>
             <CIcon name="cil-justify-center"/><strong> Team Work </strong>
@@ -188,41 +158,6 @@
               <CInput
                 label="Type"
                 description="meeting or consultation"
-                horizontal
-              />
-            <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
-            <CButton type="reset" size="sm" color="danger"><CIcon name="cil-ban"/> Reset</CButton>
-            </CForm>
-              </CTab>
-              <CTab title="Add Task" active>
-              <br>
-<CForm>
-              <CInput
-                description="Milestone"
-                label="Milestone"
-                horizontal
-                autocomplete="Milestone"
-              />
-              <CInput
-                description="Task Name"
-                label="Task Name"
-                horizontal
-                autocomplete="TaskName"
-              />
-              <CInput
-                label="Start Date"
-                type="date"
-                horizontal
-              />
-              <CInput
-                label="End Date"
-                type="date"
-                horizontal
-              />
-
-              <CInput
-                label="Outline"
-                description="Outline"
                 horizontal
               />
             <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
@@ -335,7 +270,7 @@
                 </CListGroup>
           </CCardBody>
         </CCard>
-        <CCard>
+                        <CCard>
           <CCardHeader>
             <CIcon name="cil-justify-center"/><strong> Team Members </strong>
           </CCardHeader>

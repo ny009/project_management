@@ -101,25 +101,25 @@
               <CTab title="Phase1" active>
                 <br>
                 <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
+                <strong>Task1 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
+                <strong>Task2 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
+                <strong>Task3 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
                 </p>
               </CTab>
               <CTab title="Phase2" active>
                 <br>
                 <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
+                <strong>Task1 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
+                <strong>Task2 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
+                <strong>Task3 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
                 </p>
               </CTab>
                 <CTab title="Phase3" active>
                 <br>
                 <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
+                <strong>Task1 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
+                <strong>Task2 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
+                <strong>Task3 </strong>task detail<br><CButton color="primary">finish</CButton><br><hr>
                 </p>
               </CTab>
             </CTabs>
@@ -188,41 +188,6 @@
               <CInput
                 label="Type"
                 description="meeting or consultation"
-                horizontal
-              />
-            <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
-            <CButton type="reset" size="sm" color="danger"><CIcon name="cil-ban"/> Reset</CButton>
-            </CForm>
-              </CTab>
-              <CTab title="Add Task" active>
-              <br>
-<CForm>
-              <CInput
-                description="Milestone"
-                label="Milestone"
-                horizontal
-                autocomplete="Milestone"
-              />
-              <CInput
-                description="Task Name"
-                label="Task Name"
-                horizontal
-                autocomplete="TaskName"
-              />
-              <CInput
-                label="Start Date"
-                type="date"
-                horizontal
-              />
-              <CInput
-                label="End Date"
-                type="date"
-                horizontal
-              />
-
-              <CInput
-                label="Outline"
-                description="Outline"
                 horizontal
               />
             <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
