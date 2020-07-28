@@ -40,40 +40,44 @@
                 class="flex-column align-items-start"
               >
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Phase 1 report</h5>
+                  <h5 class="mb-1">Phase 2 presentation</h5>
                   
                 </div>
-                <small>3 days from now</small><br>
+                <small>2 days from now</small><br>
                 <small>Morty Al-Banna</small><br>
-                <small>update: 2020-06-03</small>
+                <small>type: team</small><br>
+                <small>Date: Thursday, 30th of July 2020 6-9PM</small>
                 
                 
               </CListGroupItem>
-                            <CListGroupItem
+                            
+              <CListGroupItem
                 href="#"
                 class="flex-column align-items-start"
               >
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Phase 1 report</h5>
+                  <h5 class="mb-1">Peer review </h5>
                   
                 </div>
-                <small>3 days from now</small><br>
+                <small>6 days from now</small><br>
                 <small>Morty Al-Banna</small><br>
-                <small>update: 2020-06-03</small>
+                <small>type: personal</small><br>
+                <small>Due: Monday, 3rd of August 2020 12:00</small>
                 
                 
               </CListGroupItem>
-                            <CListGroupItem
+              <CListGroupItem
                 href="#"
                 class="flex-column align-items-start"
               >
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Phase 1 report</h5>
+                  <h5 class="mb-1">Phase 3 </h5>
                   
                 </div>
-                <small>3 days from now</small><br>
+                <small>not yet started</small><br>
                 <small>Morty Al-Banna</small><br>
-                <small>update: 2020-06-03</small>
+                <small>type: team</small><br>
+                <small>Due: Monday, 20th of August 2020 12:00</small>
                 
                 
               </CListGroupItem>
@@ -92,25 +96,29 @@
       <CCardBody>
       <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Phase 1: </strong>
-      <small> Due Date: 2020-07-01</small>
+      <strong> Phase 1 Report(Team): </strong><br>
+      <small> Due Date: 2020-07-01</small><br>
+      <small> status: finished</small><br>
+      <small> mark: 80</small><br>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value="25"
+          :value="100"
           color="success"
           class="mb-2"
         />
         </div>
         </div>
-              <div class="row mb-1">
+      <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Phase 2: </strong>
-      <small> Due Date: 2020-07-01</small>
+      <strong>Phase 2 presentation(Team): </strong><br>
+      <small> Due Date: 2020-07-30</small><br>
+      <small> status: processing</small><br>
+      <small> mark: not yet marked</small><br>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value="50"
+          :value="80"
           color="info"
           class="mb-2"
         />
@@ -118,12 +126,14 @@
         </div>
               <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Phase 3: </strong>
-      <small> Due Date: 2020-07-01</small>
+      <strong>Peer review(Personal): </strong><br>
+      <small> Due Date: 2020-08-03</small><br>
+      <small> status: processing</small><br>
+      <small> mark: not yet marked</small><br>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value="75"
+          :value="10"
           color="warning"
           class="mb-2"
         />
@@ -131,12 +141,14 @@
         </div>
               <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Phase 4: </strong>
-      <small> Due Date: 2020-07-01</small>
+      <strong>Phase 3(Team): </strong><br>
+      <small> Due Date: 2020-08-20</small><br>
+      <small> status: not yet started</small><br>
+      <small> mark: not yet started</small><br>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value="100"
+          :value="0"
           color="danger"
           class="mb-2"
         />
@@ -157,24 +169,37 @@
                 class="flex-column align-items-start"
               >
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Phase 1 meeting</h5>
+                  <h5 class="mb-1">Meeting </h5>
                   
                 </div>
-                <small>3 days from now</small><br>
-                <small>Type:meeting</small><br>
-                <small>update: 2020-06-03</small>
+                <small>To discuss the ER model</small><br>
+                <small>date: Tuesday, 2020-07-28</small><br>
+                <small>time: 14:00 - 16:00</small>
               </CListGroupItem>
                  <CListGroupItem
                 href="#"
                 class="flex-column align-items-start"
               >
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Phase 1 consultation</h5>
+                  <h5 class="mb-1">Consultation</h5>
                   
                 </div>
-                <small>2 days from now</small><br>
-                <small>Type:meeting</small><br>
-                <small>update: 2020-06-03</small>
+                <small>Consult how to prepare presentation</small><br>
+                <small>mentor: Morty Al-Banna</small><br>
+                <small>date: Wednesday, 2020-07-29</small><br>
+                <small>time: 10:00 - 10:30</small>
+              </CListGroupItem>
+              <CListGroupItem
+                href="#"
+                class="flex-column align-items-start"
+              >
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Meeting</h5>
+                  
+                </div>
+                <small>Prepare and rehearse presentation</small><br>
+                <small>date: Thursday, 2020-07-30</small><br>
+                <small>time: 10:00 - 12:00</small>
               </CListGroupItem>
                 </CListGroup>
           </CCardBody>
@@ -291,12 +316,20 @@ export default {
           email: 'walkenzhong@gmail.com'
         },
         {
-          name: 'Hao ZHONG',
-          email: 'walkenzhong@gmail.com'
+          name: 'Krishnan Suresh',
+          email: 'krishnan.suresh@student.unsw.edu.au'
         },
         {
-          name: 'Hao ZHONG',
-          email: 'walkenzhong@gmail.com'
+          name: 'Nehal Yatham',
+          email: 'n.yatham@student.unsw.edu.au'
+        },
+        {
+          name: 'Peiwen Lyu',
+          email: 'peiwen.lyu@student.unsw.edu.au'
+        },
+        {
+          name: 'Suharsh Nagasampagi',
+          email: 's.nagasampagi@student.unsw.edu.au'
         },
       ],
       tableFields: [
