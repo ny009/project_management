@@ -7,7 +7,7 @@
           text="COMP9323"
           footer="End Date: 2020-09-10"
           color="gradient-success"
-          inverse :value="70"
+          inverse :value="25"
         />
         </a>
       </CCol>

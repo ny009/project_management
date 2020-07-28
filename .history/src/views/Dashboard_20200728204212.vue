@@ -145,10 +145,10 @@ export default {
       tableItems: [
         {
           course: { name: 'COMP9323' },
-          project: { name: 'project management system', new: true, registered: '2020-06-01' },
+          project: { name: 'project management system', new: true, registered: 'Jan 1, 2015' },
           group: { name: 'Group5', member: '5' },
-          process: { value: 70, update: '2020-07-20' },
-          due: { date: '2020-09-10'},
+          process: { value: 50, update: 'Jun 11, 2015' },
+          due: { date: 'Jun 11, 2015'},
           activity: '10 sec ago'
         }
       ],
