@@ -4,8 +4,8 @@
       <a href="/#/team/myteam" >
         <CWidgetProgress
           header="Student Peer, Mentor and Professional Network"
-          text="End Date: 2020-09-10"
-          footer="Last update: 2020-06-01"
+          text="Software as a Service Project"
+          footer="Last update: 20200719"
           color="gradient-success"
           inverse :value="25"
         />
@@ -15,10 +15,10 @@
             <a href="/#/team/myteam" >
         <CWidgetProgress
           header="Common Remote Learning and Teaching Services Foundry"
-          text="End Date: 2020-10-11"
-          footer="Last update: 2020-07-01"
+          text="Software as a Service Project"
+          footer="Last update: 20200719"
           color="gradient-info"
-          inverse :value="70"
+          inverse :value="25"
         />
         </a>
       </CCol>

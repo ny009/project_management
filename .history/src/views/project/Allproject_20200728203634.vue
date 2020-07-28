@@ -28,9 +28,9 @@
           <CCardBody>
             {{p.outline}}
             <hr>
-            <strong>Start Date:</strong> {{p.start_date}}
+            {{p.start_date}}
             <br>
-            <strong>End Date:</strong> {{p.end_date}}
+            {{p.end_date}}
           </CCardBody>
         </CCard>
       </CCol>

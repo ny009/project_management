@@ -13,8 +13,7 @@
         </CCol>
     </CRow>
     <CRow  v-for="p in project_info">
-      <CCol md="12">
-        <CCard>
+        <CCard >
           <CCardHeader>
             <strong>{{p.title}}</strong>
             <div class="card-header-actions">
@@ -27,13 +26,8 @@
           </CCardHeader>
           <CCardBody>
             {{p.outline}}
-            <hr>
-            <strong>Start Date:</strong> {{p.start_date}}
-            <br>
-            <strong>End Date:</strong> {{p.end_date}}
           </CCardBody>
         </CCard>
-      </CCol>
     </CRow>
         
  
