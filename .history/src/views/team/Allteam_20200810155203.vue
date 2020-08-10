@@ -96,10 +96,7 @@ export default {
     var that = this;
     const id = this.$route.query.project_id;
     //alert(id);
-    axios.get("http://34.89.247.9:5000/team/all?id="+id).then(response => {
-      var res = response.data;
-      console.log(res);
-    })
+
   }
 }
 </script>

@@ -17,7 +17,7 @@ const Dashboard = () => import('@/views/Dashboard')
 const Project = () => import('@/views/project/Project')
 const Myproject = () => import('@/views/project/Myproject')
 const Allproject = () => import('@/views/project/Allproject')
-const Createproject = () => import('@/views/mentor/Createproject')
+const Createproject = () => import('@/views/project/Createproject')
 const Projectdetail = () => import('@/views/project/Projectdetail')
 
 // Views - Notifications
@@ -27,7 +27,7 @@ const Createannouncement = () => import('@/views/notifications/Createannouncemen
 //View Team
 const Allteam = () => import('@/views/team/Allteam')
 const Myteam = () => import('@/views/team/Myteam')
-const Createteam = () => import('@/views/team/Createteam')
+const Createteam = () => import('@/views/mentor/Createteam')
 const Allschedule = () => import('@/views/team/Allschedule')
 const Alltask = () => import('@/views/team/Alltask')
 
