@@ -433,12 +433,13 @@ export default {
         end_time:self.schedule.end_time,
         team_id:self.schedule.team_id,
         type:self.schedule.type
+
       },{emulateJSON:true})
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
-          alert('add schedule successfully');
+          alert('add task successfully');
         }else{
-          alert('fail add schedule');
+          alert('fail add task');
         }
       },function(error){
 
