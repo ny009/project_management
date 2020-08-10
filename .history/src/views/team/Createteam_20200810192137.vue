@@ -67,14 +67,7 @@ export default {
         project_id : that.teamdetail.project_id
       },{emulateJSON:true})
       .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('create success');
-          that.$router.push('./Myteam');
-        }else{
-          alert('create fail');
-        }
-        
-        
+        alert('success');
       },function(error){
         alert('fail');
       }

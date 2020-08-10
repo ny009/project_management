@@ -69,7 +69,7 @@ export default {
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
           alert('create success');
-          that.$router.push('./Myteam');
+          that.$router.push('./Allteam');
         }else{
           alert('create fail');
         }

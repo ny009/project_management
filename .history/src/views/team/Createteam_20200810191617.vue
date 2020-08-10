@@ -32,7 +32,7 @@
             </CForm>
           </CCardBody>
           <CCardFooter>
-            <CButton type="submit" size="sm" color="primary" @click="createteam()"><CIcon name="cil-check-circle"/> Submit</CButton>
+            <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
             <CButton type="reset" size="sm" color="danger"><CIcon name="cil-ban"/> Reset</CButton>
           </CCardFooter>
         </CCard>
@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'Forms',
   data () {
@@ -57,7 +56,7 @@ export default {
     }
   },
   methods: {
-    createteam: function() {
+    createtime: function() {
       var that = this;
       axios.post("http://34.87.247.9:5000/team/create",{
         user_id : that.teamdetail.user_id,
@@ -67,14 +66,7 @@ export default {
         project_id : that.teamdetail.project_id
       },{emulateJSON:true})
       .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('create success');
-          that.$router.push('./Myteam');
-        }else{
-          alert('create fail');
-        }
-        
-        
+        alert('success');
       },function(error){
         alert('fail');
       }
