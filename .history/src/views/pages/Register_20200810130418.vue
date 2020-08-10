@@ -75,7 +75,7 @@ export default {
   methods:{
     onSubmit:function(){
       var self = this;
-      axios.post("http://34.87.247.9:5000/register",{
+      axios.post("http://127.0.0.1:5000/register",{
         "email":this.registerForm.email,
         "password":this.registerForm.password,
         "role":this.registerForm.role,

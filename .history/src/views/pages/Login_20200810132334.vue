@@ -76,7 +76,7 @@ export default {
   methods:{
     onSubmit:function(){
       var self = this;
-      axios.get('http://34.87.247.9:5000/login',{
+      axios.get('http://127.0.0.1:5000/login',{
         params:{
           email:this.formInline.email,
           password:this.formInline.password

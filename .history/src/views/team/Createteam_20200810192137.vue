@@ -59,7 +59,7 @@ export default {
   methods: {
     createteam: function() {
       var that = this;
-      axios.post("http://34.87.247.9:5000/team/create",{
+      axios.post("http://127.0.0.1:5000/team/create",{
         user_id : that.teamdetail.user_id,
         name : that.teamdetail.name,
         detail : that.teamdetail.detail,

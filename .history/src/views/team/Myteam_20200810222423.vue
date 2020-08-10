@@ -405,7 +405,7 @@ export default {
   methods:{
     submittask:function(){
       var self = this;
-      axios.post("http://34.87.247.9:5000/task/add",{
+      axios.post("http://127.0.0.1:5000/task/add",{
         name:self.task.name,
         detail:self.task.detail,
         start_time:self.task.start_time,
@@ -426,7 +426,7 @@ export default {
     },
     submitschedule:function(){
       var self = this;
-      axios.post("http://34.87.247.9:5000/schedule/add",{
+      axios.post("http://127.0.0.1:5000/schedule/add",{
         name:self.schedule.name,
         detail:self.schedule.detail,
         start_time:self.schedule.start_time,

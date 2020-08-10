@@ -44,7 +44,7 @@ export default {
     enrollproject:function(project_id){
       //alert(project_id);
       var self = this;
-      axios.post('http://34.87.247.9:5000/project/enroll',{
+      axios.post('http://127.0.0.1:5000/project/enroll',{
         user_id: localStorage.uid,
         project_id: project_id
       },{emulateJSON:true})
@@ -67,7 +67,7 @@ export default {
   },
   created() {
       var that = this;
-      axios.get("http://34.87.247.9:5000/project/all").then(response => {
+      axios.get("http://127.0.0.1:5000/project/all").then(response => {
       var res = response.data;
       console.log(res);
       that.project_info = res;

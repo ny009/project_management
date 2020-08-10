@@ -57,7 +57,7 @@ export default {
   },
   created() {
       var that = this;
-      axios.get("http://34.87.247.9:5000/project/all").then(response => {
+      axios.get("http://127.0.0.1:5000/project/all").then(response => {
       var res = response.data;
       console.log(res);
       that.project_info = res;
