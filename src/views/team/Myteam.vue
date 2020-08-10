@@ -37,7 +37,7 @@
       <CCardBody>
       <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Phase 1 Report(Team): </strong>
+      <strong> Phase 1 Report: </strong>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
@@ -45,17 +45,17 @@
           color="success"
           class="mb-2"
         />
-        <strong> Due Date: </strong>2020-07-01 <strong>Status: </strong>Finished <strong>Mark: </strong>80
+        <strong> Due Date: </strong>2020-07-01 <strong>Status: </strong>finished <strong>Mark: </strong>80
         </div>
         </div>
         <hr>
       <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Phase 2 presentation(Team): </strong>
+      <strong> Phase 2 presentation: </strong>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value="75"
+          :value="50"
           color="info"
           class="mb-2"
         />
@@ -65,11 +65,11 @@
         <hr>
       <div class="row mb-1">
       <div class="col-sm-2">
-      <strong> Peer review(Team): </strong>
+      <strong> Peer Review: </strong>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value="10"
+          :value="0"
           color="warning"
           class="mb-2"
         />
@@ -79,7 +79,7 @@
         <hr>
       <div class="row mb-1">
       <div class="col-sm-2">
-      <strong>Phase 3(Team): </strong>
+      <strong>Phase 3: </strong>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
@@ -98,28 +98,39 @@
           </CCardHeader>
           <CCardBody>
             <CTabs>
-              <CTab title="Phase1" active>
+              <CTab title="Phase 1" active>
                 <br>
                 <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
+                <strong>Task 1 </strong>Project Scoping.<br><br>
+                </strong>Provide a brief description of the project summary, as you understand and in your own words. You are of course welcome to add any other extra information and details in order to formulate and support your response. <br>
+                <CButton size="sm" color="success" class="float-right">finished</CButton><br><hr>
+                <strong>Task 2 </strong>Requirements; Features Analysis.<br><br>
+                </strong>Identify requirements, i.e. features of the project. Requirements analysis provides an important part of the software engineering process, and serves to formalise “what needs to be done ... input for design; schedule or costing ... but also an artefact for discussion...”. <br>
+                <CButton size="sm" color="success" class="float-right">finished</CButton><br><hr>
                 </p>
               </CTab>
-              <CTab title="Phase2" active>
+              <CTab title="Phase 2" active>
                 <br>
                 <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
+                <strong>Task 1 </strong>System Design.<br><br>
+                </strong> The first this phase will require you to design the main elements of the application, or service; this includes both back-end and/or front-end components. This part of the phase, thus serves to address “how” your project will be implemented. <br>
+                <CButton size="sm" color="success" class="float-right">finished</CButton><br><hr>
+                <strong>Task 2 </strong>Presentation.<br><br>
+                </strong>Presentation shall be within time (15 for presentation + 5 minutes for questions). Each group is expected to provide a presentation of your project:<br>
+                          • To summarise the main objective of the project<br>
+                          • To summarise the significance and innovation of the project<br>
+                          • To summarise and illustrate the main features of the implemented system<br>
+                          • To summarise the system architecture (system components, their interactions,used technologies)<br>
+                          • To summarise your experience undertaking your project: what you feel you have learnt during the course of your project?  What suggestions could you propose for improving this?<br>
+                          • Expect to answer questions related to your project in general by your peers, mentors.<br>
+                <br>                    
+                <CButton size="sm" color="warning" class="float-right">not finished</CButton><br><hr>
                 </p>
               </CTab>
-                <CTab title="Phase3" active>
+                <CTab title="Peer Review" active>
                 <br>
                 <p>
-                <strong>Task1 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task2 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
-                <strong>Task3 </strong>task detail<br><CButton size="sm" color="primary" class="float-right">finish</CButton><br><hr>
+                <strong>Task 1 </strong>Peer-Review of another Group Project.<br><CButton size="sm" color="warning" class="float-right">not finished</CButton><br><hr>
                 </p>
               </CTab>
             </CTabs>
@@ -364,7 +375,7 @@ export default {
     return {
       tableItems: [
         {
-          name: 'Hao ZHONG',
+          name: 'Hao Zhong',
           email: 'walkenzhong@gmail.com'
         },
         {
