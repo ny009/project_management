@@ -125,6 +125,7 @@ export default {
   methods:{
     JoinTeam:function(team_id,type){
       //alert(team_id);
+      var that = this;
       axios.post('http://127.0.0.1:5000/team/join',{
         user_id: localStorage.uid,
         team_id: team_id
@@ -132,7 +133,7 @@ export default {
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
           alert('enroll success');
-          self.$router.push('../project/Myproject');
+          that.$router.push('../project/Myproject');
         }else{
           alert(response.data.status);
           //self.$router.push('../team/Allteam?project_id='+project_id);
