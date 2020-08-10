@@ -44,7 +44,7 @@
               <CCardBody>
                 <h2>Sign up</h2>
                 <p>If you don't have an account, please click the button and register new!</p>
-                <a href="/#/pages/register">
+                <a href="../pages/register">
                 <CButton
                   color="light"
                   variant="outline"

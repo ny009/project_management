@@ -30,6 +30,7 @@
                     </CCol>
                     <CCol col="6" class="text-right">
                       <CButton color="link" class="px-0">Forgot password?</CButton>
+                      <a href="./register"><CButton color="link" class="d-lg-none">Register now!</CButton></a>
                     </CCol>
                   </CRow>
                 </CForm>
@@ -44,15 +45,14 @@
               <CCardBody>
                 <h2>Sign up</h2>
                 <p>If you don't have an account, please click the button and register new!</p>
-                <a href="/#/pages/register">
                 <CButton
                   color="light"
                   variant="outline"
                   size="lg"
+                  @click="./register"
                 >
                   Register Now!
                 </CButton>
-                </a>
               </CCardBody>
             </CCard>
           </CCardGroup>
