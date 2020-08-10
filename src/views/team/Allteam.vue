@@ -10,19 +10,12 @@
       <div>
         <CCard>
           <CCardHeader>
-            My team
             <div class="card-header-actions">
               <a 
-                href="/#/team/myteam" 
+                :href="getGoodsHref()" 
                 class="card-header-action" 
               >
-                <CButton size="sm" color="primary">View My Team</CButton>
-              </a>
-              <a 
-                href="/#/team/createteam" 
-                class="card-header-action" 
-              >
-                <CButton size="sm" color="primary">Create A New Team</CButton>
+                <CButton size="sm" color="primary" variant="outline">Create A New Team</CButton>
               </a>
             </div>
           </CCardHeader>
@@ -110,7 +103,7 @@ export default {
   created(){
       var that = this;
       const id = this.$route.query.project_id;
-      alert(id);
+      //alert(id);
       axios.get("http://127.0.0.1:5000/team/all?project_id="+id).then(response => {
         var res = response.data;
         console.log(res);
@@ -131,8 +124,7 @@ export default {
     },
   methods:{
     JoinTeam:function(team_id,type){
-      alert(team_id);
-      
+      //alert(team_id);
       axios.post('http://127.0.0.1:5000/team/join',{
         user_id: localStorage.uid,
         team_id: team_id
@@ -140,7 +132,7 @@ export default {
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
           alert('enroll success');
-          //self.$router.push('../team/Allteam?project_id='+project_id);
+          self.$router.push('../project/Myproject');
         }else{
           alert(response.data.status);
           //self.$router.push('../team/Allteam?project_id='+project_id);
@@ -163,7 +155,10 @@ export default {
       this.$set(this.tableItems[item.id], '_toggled', !item._toggled)
       this.collapseDuration = 300
       this.$nextTick(() => { this.collapseDuration = 0})
-    }
+    },
+    getGoodsHref:function(val){
+      return '/#/team/createteam?project_id='+this.$route.query.project_id;
+	  },
     
   }
 }
