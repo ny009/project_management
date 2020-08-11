@@ -46,8 +46,8 @@
             <br>
             <strong>End Date:</strong> {{p.end_time}}
             <div style="float:right">
-            <a href="/#/team/allteam" >
-                <CButton color="primary" size="sm">Check</CButton>
+            <a >
+                <CButton color="primary" size="sm" @click="projectdetail(p.id)">Check</CButton>
             </a>
             </div>
           </CCardFooter>
@@ -91,6 +91,10 @@ export default {
     changeTerm(event) {
       this.newproject.term = event.target.value; 
       console.log("choose ",this.newproject.term)
+    },
+    projectdetail:function (project_id) {
+      //alert(project_id);
+      this.$router.push('../mentor/projectdetail?project_id=' + project_id);
     },
     createproject:function () {
       var self = this;
