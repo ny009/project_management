@@ -47,42 +47,6 @@
         <CCard>
           <CCardHeader>
             <CIcon name="cil-justify-center"/>
-            <strong> Create Phase </strong>
-          </CCardHeader>
-          <CCardBody>
-            <CForm>
-              <CInput placeholder="Phase Name" label="Phase Name" horizontal/>
-              <CInput type="date" label="Start Time" horizontal/>
-              <CInput type="date" label="End Time" horizontal/>
-              <CInput placeholder="Phase detail" label="Phase detail" horizontal/>
-              <CButton type="submit" size="sm" color="primary" @click=""><CIcon name="cil-check-circle"/> Submit</CButton>
-            </CForm>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol col="12" md="4">
-        <CCard>
-          <CCardHeader>
-            <CIcon name="cil-justify-center"/>
-            <strong> No Team Student </strong>
-          </CCardHeader>
-          <CCardBody>
-            <CDataTable
-              class="mb-0 table-outline"
-              hover
-              :items="noteamlist"
-              :fields="noteamtable"
-              head-color="light"
-              no-sorting
-            >
-            </CDataTable>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol col="12" md="12">
-        <CCard>
-          <CCardHeader>
-            <CIcon name="cil-justify-center"/>
             <strong> All Team </strong>
           </CCardHeader>
           <CCardBody>
@@ -108,7 +72,7 @@ export default {
   name: 'Forms',
   data () {
     return {
-      collapse:true,
+      collapse:false,
       project_detail:{
         name:'',
         course:'',
@@ -133,11 +97,6 @@ export default {
         filter: false
       }
       
-      ],
-      noteamlist:{},
-      noteamtable:[
-        { key: 'student_name', label: 'Student Name'},
-        { key: 'student_email', label: 'Student Email'},
       ]
     }
   },

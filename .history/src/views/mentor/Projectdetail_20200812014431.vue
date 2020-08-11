@@ -1,11 +1,11 @@
 <template>
   <div>
     <CRow>
-      <CCol>
+      <CCol col="12" md="8">
         <CCard>
           <CCardHeader>
             <CIcon name="cil-justify-center"/>
-            <strong> Create A Project </strong>
+            <strong> Project Detail </strong>
             <div class="card-header-actions">
               <CButton @click="collapse = !collapse" color="primary" class="mb-2" size="sm">
                 Open
@@ -15,15 +15,14 @@
           <CCardBody>
             <CCollapse :show="collapse" :duration="400">
               <CCard body-wrapper>
-                <CForm>
-                  <CInput placeholder="Title" label="Title" horizontal/>
-                  <CInput placeholder="Detail" label="Detail" horizontal/>
-                  <CInput placeholder="Term" label="Term" horizontal/>
-                  <CInput placeholder="Course" label="Course" horizontal/>
-                  <CInput type="date"  label="Start_time" horizontal/>
-                  <CInput type="date"  label="End_time" horizontal/>
-                  <CButton type="submit" size="sm" color="primary" @click=""><CIcon name="cil-check-circle"/> Submit</CButton>
-                </CForm>
+                <div>
+                <strong>Project Name: </strong>{{project_detail.name}}<br>
+                <strong>Course: </strong>{{project_detail.course}}<br>
+                <strong>Term: </strong>{{project_detail.term}}<br>
+                <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
+                <strong>Project End Date: </strong>{{project_detail.end_time}}<br>
+                <strong>Project Description: </strong>{{project_detail.detail}}<br>
+                </div>
               </CCard>
             </CCollapse>
           </CCardBody>
@@ -40,12 +39,13 @@ export default {
   data () {
     return {
       collapse:false,
-      project:{
-        title:'',
-        outline:'',
-        mentor:'',
-        start_date:'',
-        end_date:''
+      project_detail:{
+        name:'',
+        course:'',
+        term:'',
+        start_time:'',
+        end_time:'',
+        detail
       }
     }
   },

@@ -5,7 +5,7 @@
         <CCard>
           <CCardHeader>
             <CIcon name="cil-justify-center"/>
-            <strong> Create A Project </strong>
+            <strong> Project Detail </strong>
             <div class="card-header-actions">
               <CButton @click="collapse = !collapse" color="primary" class="mb-2" size="sm">
                 Open
