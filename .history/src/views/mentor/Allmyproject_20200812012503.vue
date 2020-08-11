@@ -1,7 +1,7 @@
 <template>
   <div>
     <CRow>
-    <CCol col="12" md="12">
+    <CCol col="12" md="6">
       <CCard>
         <CCardHeader>
           <CIcon name="cil-justify-center"/>

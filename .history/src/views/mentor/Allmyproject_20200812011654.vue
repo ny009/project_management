@@ -1,30 +1,39 @@
 <template>
   <div>
     <CRow>
-    <CCol col="12" md="12">
+    <CCol col="12" md="6">
       <CCard>
         <CCardHeader>
           <CIcon name="cil-justify-center"/>
-          <strong> Create A Project </strong>
+          <strong> Bootstrap Collapse </strong>
           <div class="card-header-actions">
-            <CButton @click="collapse = !collapse" color="primary" class="mb-2" size="sm">
-              Open
-            </CButton>
+            <a 
+              href="https://coreui.io/vue/docs/components/collapse" 
+              class="card-header-action" 
+              rel="noreferrer noopener" 
+              target="_blank"
+            >
+              <small class="text-muted">docs</small>
+            </a>
           </div>
         </CCardHeader>
         <CCardBody>
-
+          <CButton @click="collapse = !collapse" color="primary" class="mb-2">
+            Toggle Collapse
+          </CButton>
           <CCollapse :show="collapse" :duration="400">
             <CCard body-wrapper>
-              <CForm>
-                <CInput placeholder="Title" label="Title" horizontal/>
-                <CInput placeholder="Detail" label="Detail" horizontal/>
-                <CInput placeholder="Term" label="Term" horizontal/>
-                <CInput placeholder="Course" label="Course" horizontal/>
-                <CInput type="date"  label="Start_time" horizontal/>
-                <CInput type="date"  label="End_time" horizontal/>
-                <CButton type="submit" size="sm" color="primary" @click=""><CIcon name="cil-check-circle"/> Submit</CButton>
-              </CForm>
+              <CCardText>Collapse contents Here</CCardText>
+              <CButton  
+                @click="innerCollapse = !innerCollapse" 
+                size="sm" 
+                color="secondary"
+              >
+                Toggle Inner Collapse
+              </CButton>
+              <CCollapse :show="innerCollapse" class="mt-2">
+                <CCard body-wrapper>Hello!</CCard>
+              </CCollapse>
             </CCard>
           </CCollapse>
         </CCardBody>
@@ -47,7 +56,7 @@
             <strong>End Date:</strong> {{p.end_time}}
             <div style="float:right">
             <a href="/#/team/allteam" >
-                <CButton color="primary" size="sm">Check</CButton>
+                <CButton color="primary" size="sm">Enroll</CButton>
             </a>
             </div>
           </CCardFooter>
@@ -67,7 +76,6 @@ export default {
   data: function () {
     return {
       collapse: false,
-      project_info:[]
     }
   },
   created() {
