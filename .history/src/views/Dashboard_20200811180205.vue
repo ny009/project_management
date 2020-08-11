@@ -57,18 +57,6 @@
               head-color="light"
               no-sorting
             >
-              <td slot="Process" slot-scope="{item}">
-                <div class="clearfix">
-                  <div class="float-left">
-                    <strong>{{item.progress_rate}}%</strong>
-                  </div>
-                </div>
-                <CProgress
-                  class="progress-xs"
-                  v-model="item.progress_rate"
-                  :color="color(item.progress_rate)"
-                />
-              </td>
             </CDataTable>
           </CCardBody>
         </CCard>
@@ -92,7 +80,6 @@ export default {
         { key: 'course', label: 'Course', _classes: 'text-center' },
         { key: 'all_phase_num', label: 'All Phase' },
         { key: 'finished_phase_num', label: 'Finished Phase' },
-        { key: 'Process', label: 'Process' },
       ]
     }
   },

@@ -62,6 +62,9 @@
                   <div class="float-left">
                     <strong>{{item.progress_rate}}%</strong>
                   </div>
+                  <div class="float-right">
+                    <small class="text-muted">{{item.progress_rate}}</small>
+                  </div>
                 </div>
                 <CProgress
                   class="progress-xs"

@@ -57,10 +57,13 @@
               head-color="light"
               no-sorting
             >
-              <td slot="Process" slot-scope="{item}">
+              <td slot="process" slot-scope="{item}">
                 <div class="clearfix">
                   <div class="float-left">
                     <strong>{{item.progress_rate}}%</strong>
+                  </div>
+                  <div class="float-right">
+                    <small class="text-muted">{{item.progress_rate}}</small>
                   </div>
                 </div>
                 <CProgress
