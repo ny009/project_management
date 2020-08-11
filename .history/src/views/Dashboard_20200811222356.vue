@@ -116,14 +116,9 @@ export default {
     axios.get("http://127.0.0.1:5000/team/my?user_id="+localStorage.uid).then(response=>{
       var res = response.data;
       console.log(res);
-      if(res.status === "FAIL! No team joined"){
-        alert('please enroll a project first!')
-        that.$router.push('../project/Allproject');
-      }
       that.team_info = res;
       //alert(res.length)
       that.project_num = res.length;
-      
     });
     axios.get("http://127.0.0.1:5000/notification/student?user_id="+localStorage.uid).then(response=>{
       var res = response.data;
@@ -133,6 +128,9 @@ export default {
       //alert(res.length)
       console.log(that.notification);
     });
+    if(that.project_num==0){
+      self.$router.push('../project/Allproject');
+    }
   }
 }
 </script>

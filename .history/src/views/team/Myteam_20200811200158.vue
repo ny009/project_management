@@ -28,6 +28,7 @@
                 <strong>Course: </strong>{{project_detail.course}}<br>
                 <strong>Term: </strong>{{project_detail.term}}<br>
                 <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
+                <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
                 <strong>Project End Date: </strong>{{project_detail.end_time}}<br>
                 <strong>Project Description: </strong>{{project_detail.detail}}<br>
                 </div>
@@ -79,16 +80,9 @@
                 <hr>
                 </div>
                 <div>
-                  <h4>Submit {{p.name}}</h4>
                   <CForm>
-                    <CRow>
-                      <CCol>
-                          <CInputFile label="File input" @change="getFile($event)"/>
-                      </CCol>
-                      <CCol>
-                          <CButton type="submit" color="primary" @click="submitphase($event,p.id)">submit</CButton>
-                      </CCol>
-                    </CRow>
+                    <CInput type=file/>
+                    <CButton>submit</CButton>
                   </CForm>
                 </div>
               </CTab>
@@ -283,8 +277,6 @@ export default {
   name: 'ListGroups',
   data () {
     return {
-      file:'',
-      team_id:'',
       inviteemail:{
         team_id:'',
         email:''
@@ -449,38 +441,7 @@ export default {
         $color = 'danger'
       }
       return $color
-    },
-    getFile(event) {
-      var self = this;
-      console.log(event);
-      self.file = event[0];
-      console.log(self.file);
-    },
-    submitphase(event,phaseid){
-      var self = this;
-      event.preventDefault();
-      let formData = new FormData();
-      if(self.file === ''){
-        alert('select a file');
-        console.log('no file');
-      }else{
-        console.log('yes');
-        formData.append('file', self.file);
-        formData.append('phase_id', phaseid);
-        formData.append('team_id', self.team_id);
-        console.log(formData);
-        let config = {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }
-        axios.post('http://baidu.com:5000/phase/submit', formData, config).then(function (response) {
-                  alert('success');
-        })
-      }
-
     }
-
   },
   created(){
     var that = this;
@@ -488,7 +449,6 @@ export default {
     that.schedule.team_id = team_id;
     that.task.team_id = team_id;
     that.inviteemail.team_id = team_id;
-    that.team_id = team_id
     //alert(team_id)
     axios.get("http://127.0.0.1:5000/team/detail?team_id="+team_id).then(response=>{
       var res = response.data;
@@ -498,7 +458,7 @@ export default {
       that.project_detail = res.project;
       that.phase = res.phase;
       for(var i = 0; i < res.phase_all_num; i++){
-        //console.log(i);
+        console.log(i);
         that.options.push({
           value:res.phase[i].id,
           label:res.phase[i].name

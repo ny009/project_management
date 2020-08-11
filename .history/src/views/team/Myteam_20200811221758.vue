@@ -28,6 +28,7 @@
                 <strong>Course: </strong>{{project_detail.course}}<br>
                 <strong>Term: </strong>{{project_detail.term}}<br>
                 <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
+                <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
                 <strong>Project End Date: </strong>{{project_detail.end_time}}<br>
                 <strong>Project Description: </strong>{{project_detail.detail}}<br>
                 </div>
@@ -464,7 +465,6 @@ export default {
         alert('select a file');
         console.log('no file');
       }else{
-        console.log('yes');
         formData.append('file', self.file);
         formData.append('phase_id', phaseid);
         formData.append('team_id', self.team_id);

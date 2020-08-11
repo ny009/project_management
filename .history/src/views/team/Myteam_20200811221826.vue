@@ -28,6 +28,7 @@
                 <strong>Course: </strong>{{project_detail.course}}<br>
                 <strong>Term: </strong>{{project_detail.term}}<br>
                 <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
+                <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
                 <strong>Project End Date: </strong>{{project_detail.end_time}}<br>
                 <strong>Project Description: </strong>{{project_detail.detail}}<br>
                 </div>

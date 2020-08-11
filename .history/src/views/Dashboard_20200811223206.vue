@@ -117,8 +117,8 @@ export default {
       var res = response.data;
       console.log(res);
       if(res.status === "FAIL! No team joined"){
-        alert('please enroll a project first!')
-        that.$router.push('../project/Allproject');
+        console.log(11111111);
+        self.$router.push('../project/Allproject');
       }
       that.team_info = res;
       //alert(res.length)

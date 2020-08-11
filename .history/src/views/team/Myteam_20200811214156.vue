@@ -28,6 +28,7 @@
                 <strong>Course: </strong>{{project_detail.course}}<br>
                 <strong>Term: </strong>{{project_detail.term}}<br>
                 <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
+                <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
                 <strong>Project End Date: </strong>{{project_detail.end_time}}<br>
                 <strong>Project Description: </strong>{{project_detail.detail}}<br>
                 </div>
@@ -454,31 +455,24 @@ export default {
       var self = this;
       console.log(event);
       self.file = event[0];
-      console.log(self.file);
+      console.log(this.file);
     },
     submitphase(event,phaseid){
       var self = this;
       event.preventDefault();
       let formData = new FormData();
-      if(self.file === ''){
-        alert('select a file');
-        console.log('no file');
-      }else{
-        console.log('yes');
-        formData.append('file', self.file);
-        formData.append('phase_id', phaseid);
-        formData.append('team_id', self.team_id);
-        console.log(formData);
-        let config = {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
+      formData.append('file', self.file);
+      formData.append('phase_id', phaseid);
+      formData.append('team_id', self.task.team_id);
+      console.log(formData);
+      let config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
         }
-        axios.post('http://baidu.com:5000/phase/submit', formData, config).then(function (response) {
-                  alert('success');
-        })
       }
-
+      axios.post('http://127.0.0.1:5000/phase/submit', formData, config).then(function (response) {
+                alert('success');
+      })
     }
 
   },
