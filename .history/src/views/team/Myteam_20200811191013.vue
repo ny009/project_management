@@ -339,7 +339,6 @@ export default {
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
           alert('add task successfully');
-          location.reload();
         }else{
           alert('fail add task');
         }
@@ -360,7 +359,6 @@ export default {
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
           alert('add schedule successfully');
-          location.reload();
         }else{
           alert('fail add schedule');
         }
@@ -380,7 +378,6 @@ export default {
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
           alert('Set successfully');
-          location.reload();
         }else{
           alert('Fail Set');
         }
@@ -397,7 +394,6 @@ export default {
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
           alert('add successfully');
-          location.reload();
         }else{
           alert('Fail add');
         }
@@ -414,7 +410,6 @@ export default {
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
           alert('invite successfully');
-          location.reload();
         }else{
           alert(response.data.status);
         }
