@@ -197,11 +197,6 @@ export default {
       that.teaminfo = res;
       console.log(res);
     })
-    axios.get("http://127.0.0.1:5000/project/id?project_id="+id).then(response=>{
-      var res = response.data;
-      that.project_detail = res;
-      console.log(res);
-    })
   }
 }
 </script>

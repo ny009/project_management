@@ -35,10 +35,10 @@
             <strong> Assign student </strong>
           </CCardHeader>
           <CCardBody>
-            <CForm :model="assignstudentinfo">
-              <CInput placeholder="Student Email" label="Email" v-model="assignstudentinfo.email" horizontal/>
-              <CInput placeholder="Team ID" label="ID" v-model="assignstudentinfo.team_id" horizontal/>
-              <CButton type="submit" size="sm" color="primary" @click="assignstudent()"><CIcon name="cil-check-circle"/> Submit</CButton>
+            <CForm>
+              <CInput placeholder="Student Email" label="Email" horizontal/>
+              <CInput placeholder="Team ID" label="ID" horizontal/>
+              <CButton type="submit" size="sm" color="primary" @click=""><CIcon name="cil-check-circle"/> Submit</CButton>
             </CForm>
           </CCardBody>
         </CCard>
@@ -50,12 +50,12 @@
             <strong> Create Phase </strong>
           </CCardHeader>
           <CCardBody>
-            <CForm :model="createphaseinfo">
-              <CInput placeholder="Phase Name" label="Phase Name" v-model="createphaseinfo.name" horizontal/>
-              <CInput type="date" label="Start Time" v-model="createphaseinfo.start_time" horizontal/>
-              <CInput type="date" label="End Time" v-model="createphaseinfo.end_time" horizontal/>
-              <CInput placeholder="Phase detail" label="Phase detail" v-model="createphaseinfo.detail" horizontal/>
-              <CButton type="submit" size="sm" color="primary" @click="createphase()"><CIcon name="cil-check-circle"/> Submit</CButton>
+            <CForm>
+              <CInput placeholder="Phase Name" label="Phase Name" horizontal/>
+              <CInput type="date" label="Start Time" horizontal/>
+              <CInput type="date" label="End Time" horizontal/>
+              <CInput placeholder="Phase detail" label="Phase detail" horizontal/>
+              <CButton type="submit" size="sm" color="primary" @click=""><CIcon name="cil-check-circle"/> Submit</CButton>
             </CForm>
           </CCardBody>
         </CCard>
@@ -130,57 +130,10 @@ export default {
       noteamtable:[
         { key: 'name', label: 'Student Name'},
         { key: 'email', label: 'Student Email'},
-      ],
-      assignstudentinfo:{
-        email:'',
-        team_id:''
-      },
-      createphaseinfo:{
-        name:'',
-        detail:'',
-        start_time:'',
-        end_time:''
-      }
+      ]
     }
   },
   methods: {
-    assignstudent:function(){
-      var self = this;
-      axios.post("http://127.0.0.1:5000/team/invite",{
-        email:self.assignstudentinfo.email,
-        team_id:self.assignstudentinfo.team_id,
-      },{emulateJSON:true})
-      .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('SUCCESS');
-          location.reload();
-        }else{
-          alert('FAIL');
-        }
-      },function(error){
-          alert('FAIL');
-      })
-    },
-    createphase:function(){
-      var self = this;
-      axios.post("http://127.0.0.1:5000/phase/create",{
-        name:self.createphaseinfo.name,
-        detail:self.createphaseinfo.detail,
-        start_time:self.createphaseinfo.start_time,
-        end_time:self.createphaseinfo.end_time,
-        status:"not finished"
-      },{emulateJSON:true})
-      .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('SUCCESS');
-          location.reload();
-        }else{
-          alert('FAIL');
-        }
-      },function(error){
-          alert('FAIL');
-      })
-    }
 
   },
   created(){
@@ -195,11 +148,6 @@ export default {
     axios.get("http://127.0.0.1:5000/team/all?project_id="+id).then(response=>{
       var res = response.data;
       that.teaminfo = res;
-      console.log(res);
-    })
-    axios.get("http://127.0.0.1:5000/project/id?project_id="+id).then(response=>{
-      var res = response.data;
-      that.project_detail = res;
       console.log(res);
     })
   }
