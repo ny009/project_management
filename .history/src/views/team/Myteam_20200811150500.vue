@@ -13,10 +13,9 @@
                 <div>
                 <strong>Team Name: </strong>{{team_name}}<br>
                 <strong>Team detail: </strong>{{team_detail}}<br>
-                 <strong>Team Tag:</strong>
-                <template v-for="tag in team_tag">
-                 {{tag}}
-                </template>
+                <div v-for="tag in team_tag">
+                  {{tag}}
+                </div>
                 <div>
                   <CForm :model = "newtag">
                     <CRow>

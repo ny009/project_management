@@ -13,10 +13,9 @@
                 <div>
                 <strong>Team Name: </strong>{{team_name}}<br>
                 <strong>Team detail: </strong>{{team_detail}}<br>
-                 <strong>Team Tag:</strong>
-                <template v-for="tag in team_tag">
-                 {{tag}}
-                </template>
+                <div v-for="tag in team_tag">
+                  {{tag}}
+                </div>
                 <div>
                   <CForm :model = "newtag">
                     <CRow>
@@ -27,7 +26,7 @@
                     <CInput v-model="newtag.tag" horizontal />
                     </CCol>
                     <CCol sm="1">
-                    <CButton color="primary" size="sm" @click="addtag()">ADD</CButton>
+                    <CButton color="primary" size="sm">ADD</CButton>
                     </CCol>
                     </CRow>
                   </CForm>
@@ -261,7 +260,7 @@ export default {
     return {
       team_name : '',
       newtag:{
-        tag:''
+        tag=''
       },
       team_detail : '',
       members: [],
@@ -311,7 +310,7 @@ export default {
           alert('fail add task');
         }
       },function(error){
-          alert('fail add task');
+
       })
     },
     submitschedule:function(){
@@ -347,22 +346,6 @@ export default {
         }
       },function(error){
           alert('fail Set');
-      })
-    },
-    addtag:function(){
-      var self = this;
-      axios.post("http://34.87.247.9:5000/team/tag",{
-        team_id:self.task.team_id,
-        tag:self.newtag.tag
-      },{emulateJSON:true})
-      .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('add successfully');
-        }else{
-          alert('Fail add');
-        }
-      },function(error){
-          alert('fail add');
       })
     }
   },

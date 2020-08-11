@@ -13,27 +13,8 @@
                 <div>
                 <strong>Team Name: </strong>{{team_name}}<br>
                 <strong>Team detail: </strong>{{team_detail}}<br>
-                 <strong>Team Tag:</strong>
-                <template v-for="tag in team_tag">
-                 {{tag}}
-                </template>
-                <div>
-                  <CForm :model = "newtag">
-                    <CRow>
-                      <CCol sm="2">
-                        <strong>ADD TAG </strong>
-                      </CCol>
-                    <CCol sm="4">
-                    <CInput v-model="newtag.tag" horizontal />
-                    </CCol>
-                    <CCol sm="1">
-                    <CButton color="primary" size="sm" @click="addtag()">ADD</CButton>
-                    </CCol>
-                    </CRow>
-                  </CForm>
                 </div>
-                </div>
-                
+                <CButton color="primary">EDIT</CButton>
               </CTab>
               <CTab title="Team Project" active>
                 <br>
@@ -85,10 +66,7 @@
                 <div v-for="t in p.task">
                 <strong>{{t.name}} </strong><br><br>
                 {{t.detail}}<br>
-                <strong>Start Time: </strong>{{t.start_time}}<br>
-                <strong>End Time: </strong>{{t.end_time}}<br>
-                <strong>Status: </strong>{{t.status}}<br>
-                <CButton size="sm" color="success" class="float-right" @click="finishtask(t.id)">Done</CButton><br>
+                <CButton size="sm" color="success" class="float-right">{{t.status}}</CButton><br>
                 
                 <hr>
                 </div>
@@ -149,7 +127,7 @@
                 label="Task Name"
                 horizontal
                 autocomplete="Name"
-                v-model="task.name"
+                v-model="task.type"
               />
               <CInput
                 description="Task detail"
@@ -161,14 +139,19 @@
               <CInput
                 label="Start Date"
                 horizontal
-                description="2020-7-2 12:00:00"
                 v-model="task.start_time"
               />
               <CInput
                 label="End Date"
                 horizontal
-                description="2020-7-2 12:00:00"
                 v-model="task.end_time"
+              />
+
+              <CInput
+                label="status"
+                description="status"
+                v-model="task.status"
+                horizontal
               />
               <CInput
                 label="Phase ID"
@@ -224,8 +207,8 @@
                   
                 </div>
                 <small>{{s.detail}}</small><br>
-                <small>Start Time:<br> {{s.start_time}}</small><br>
-                <small>End Time:<br> {{s.start_time}}</small><br>
+                <small>Start Time: {{s.start_time}}</small><br>
+                <small>End Time: {{s.start_time}}</small><br>
                 <small>Type: {{s.type}}</small>
               </CListGroupItem>
                 </CListGroup>
@@ -260,9 +243,6 @@ export default {
   data () {
     return {
       team_name : '',
-      newtag:{
-        tag:''
-      },
       team_detail : '',
       members: [],
       membertable: [
@@ -275,7 +255,7 @@ export default {
         start_time:'',
         end_time:'',
         team_id:'',
-        status:'not finished',
+        status:'',
         phase_id:''
       },
       schedule:{
@@ -311,7 +291,7 @@ export default {
           alert('fail add task');
         }
       },function(error){
-          alert('fail add task');
+
       })
     },
     submitschedule:function(){
@@ -321,7 +301,7 @@ export default {
         detail:self.schedule.detail,
         start_time:self.schedule.start_time,
         end_time:self.schedule.end_time,
-        team_id:self.task.team_id,
+        team_id:self.schedule.team_id,
         type:self.schedule.type
       },{emulateJSON:true})
       .then(function(response){
@@ -331,38 +311,7 @@ export default {
           alert('fail add schedule');
         }
       },function(error){
-          alert('fail add schedule');
-      })
-    },
-    finishtask:function(id){
-      var self = this;
-      axios.post("http://127.0.0.1:5000/task/finish",{
-        task_id:id
-      },{emulateJSON:true})
-      .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('Set successfully');
-        }else{
-          alert('Fail Set');
-        }
-      },function(error){
-          alert('fail Set');
-      })
-    },
-    addtag:function(){
-      var self = this;
-      axios.post("http://34.87.247.9:5000/team/tag",{
-        team_id:self.task.team_id,
-        tag:self.newtag.tag
-      },{emulateJSON:true})
-      .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('add successfully');
-        }else{
-          alert('Fail add');
-        }
-      },function(error){
-          alert('fail add');
+
       })
     }
   },

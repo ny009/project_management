@@ -13,27 +13,8 @@
                 <div>
                 <strong>Team Name: </strong>{{team_name}}<br>
                 <strong>Team detail: </strong>{{team_detail}}<br>
-                 <strong>Team Tag:</strong>
-                <template v-for="tag in team_tag">
-                 {{tag}}
-                </template>
-                <div>
-                  <CForm :model = "newtag">
-                    <CRow>
-                      <CCol sm="2">
-                        <strong>ADD TAG </strong>
-                      </CCol>
-                    <CCol sm="4">
-                    <CInput v-model="newtag.tag" horizontal />
-                    </CCol>
-                    <CCol sm="1">
-                    <CButton color="primary" size="sm" @click="addtag()">ADD</CButton>
-                    </CCol>
-                    </CRow>
-                  </CForm>
                 </div>
-                </div>
-                
+                <CButton color="primary">EDIT</CButton>
               </CTab>
               <CTab title="Team Project" active>
                 <br>
@@ -88,7 +69,7 @@
                 <strong>Start Time: </strong>{{t.start_time}}<br>
                 <strong>End Time: </strong>{{t.end_time}}<br>
                 <strong>Status: </strong>{{t.status}}<br>
-                <CButton size="sm" color="success" class="float-right" @click="finishtask(t.id)">Done</CButton><br>
+                <CButton size="sm" color="success" class="float-right">Done</CButton><br>
                 
                 <hr>
                 </div>
@@ -260,9 +241,6 @@ export default {
   data () {
     return {
       team_name : '',
-      newtag:{
-        tag:''
-      },
       team_detail : '',
       members: [],
       membertable: [
@@ -311,7 +289,7 @@ export default {
           alert('fail add task');
         }
       },function(error){
-          alert('fail add task');
+
       })
     },
     submitschedule:function(){
@@ -332,37 +310,6 @@ export default {
         }
       },function(error){
           alert('fail add schedule');
-      })
-    },
-    finishtask:function(id){
-      var self = this;
-      axios.post("http://127.0.0.1:5000/task/finish",{
-        task_id:id
-      },{emulateJSON:true})
-      .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('Set successfully');
-        }else{
-          alert('Fail Set');
-        }
-      },function(error){
-          alert('fail Set');
-      })
-    },
-    addtag:function(){
-      var self = this;
-      axios.post("http://34.87.247.9:5000/team/tag",{
-        team_id:self.task.team_id,
-        tag:self.newtag.tag
-      },{emulateJSON:true})
-      .then(function(response){
-        if(response.data.status === 'SUCCESS'){
-          alert('add successfully');
-        }else{
-          alert('Fail add');
-        }
-      },function(error){
-          alert('fail add');
       })
     }
   },

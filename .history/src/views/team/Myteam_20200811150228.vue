@@ -13,10 +13,9 @@
                 <div>
                 <strong>Team Name: </strong>{{team_name}}<br>
                 <strong>Team detail: </strong>{{team_detail}}<br>
-                 <strong>Team Tag:</strong>
-                <template v-for="tag in team_tag">
-                 {{tag}}
-                </template>
+                <div v-for="tag in team_tag">
+                  {{tag}}
+                </div>
                 <div>
                   <CForm :model = "newtag">
                     <CRow>
@@ -261,7 +260,7 @@ export default {
     return {
       team_name : '',
       newtag:{
-        tag:''
+        tag=''
       },
       team_detail : '',
       members: [],
@@ -351,9 +350,9 @@ export default {
     },
     addtag:function(){
       var self = this;
-      axios.post("http://34.87.247.9:5000/team/tag",{
+      axios.post("http://127.0.0.1:5000/team/tag",{
         team_id:self.task.team_id,
-        tag:self.newtag.tag
+        tag:self.newtag.team_id
       },{emulateJSON:true})
       .then(function(response){
         if(response.data.status === 'SUCCESS'){
