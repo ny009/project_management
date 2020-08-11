@@ -14,14 +14,15 @@ const Dashboard = () => import('@/views/Dashboard')
 
 
 // Views - Components
-
+const Project = () => import('@/views/project/Project')
 const Myproject = () => import('@/views/project/Myproject')
 const Allproject = () => import('@/views/project/Allproject')
-
+const Createproject = () => import('@/views/mentor/Createproject')
+const Projectdetail = () => import('@/views/project/Projectdetail')
 
 // Views - Notifications
 const Alerts = () => import('@/views/notifications/Alerts')
-
+const Createannouncement = () => import('@/views/notifications/Createannouncement')
 
 //View Team
 const Allteam = () => import('@/views/team/Allteam')
@@ -36,11 +37,6 @@ const Page500 = () => import('@/views/pages/Page500')
 const Login = () => import('@/views/pages/Login')
 const Register = () => import('@/views/pages/Register')
 
-//Views - mentor
-const Allannouncement = () => import('@/views/mentor/Allannouncement')
-const Allmyproject = () => import('@/views/mentor/Allmyproject')
-const Phasedetail = () => import('@/views/mentor/Phasedetail')
-const Mentorprojectdetail = () => import('@/views/mentor/Projectdetail')
 
 
 Vue.use(Router)
@@ -82,6 +78,11 @@ function configRoutes () {
               path: 'allproject',
               name: 'Allproject',
               component: Allproject
+            },
+            {
+              path: 'createproject',
+              name: 'Createproject',
+              component: Createproject
             },
           ]
         },
@@ -133,35 +134,10 @@ function configRoutes () {
               name: 'Alerts',
               component: Alerts
             },
-          ]
-        },
-        {
-          path: 'mentor',
-          redirect: '/mentor/allmyproject',
-          name: 'Mentor',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
             {
-              path: 'allmyproject',
-              name: 'Allmyproject',
-              component: Allmyproject
-            },
-            {
-              path: 'allannouncement',
-              name: 'Allannouncement',
-              component: Allannouncement
-            },
-            {
-              path: 'phasedetail',
-              name: 'Phasedetail',
-              component: Phasedetail
-            },
-            {
-              path: 'projectdetail',
-              name: 'Projectdetail',
-              component: Mentorprojectdetail
+              path: 'createannouncement',
+              name: 'Createannouncement',
+              component: Createannouncement
             },
           ]
         }

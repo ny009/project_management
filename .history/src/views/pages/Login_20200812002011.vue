@@ -89,7 +89,7 @@ export default {
           localStorage.username = response.data.name;
           localStorage.role = response.data.role;
           localStorage.email = response.data.email;
-          if(response.data.role === 'student'){
+          if(response.data.role === "student"){
             self.$router.push('../dashboard');
           }else{
             self.$router.push('../mentor/allmyproject');

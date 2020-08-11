@@ -14,10 +14,11 @@ const Dashboard = () => import('@/views/Dashboard')
 
 
 // Views - Components
-
+const Project = () => import('@/views/project/Project')
 const Myproject = () => import('@/views/project/Myproject')
 const Allproject = () => import('@/views/project/Allproject')
-
+const Createproject = () => import('@/views/mentor/Createproject')
+const Projectdetail = () => import('@/views/project/Projectdetail')
 
 // Views - Notifications
 const Alerts = () => import('@/views/notifications/Alerts')
@@ -82,6 +83,11 @@ function configRoutes () {
               path: 'allproject',
               name: 'Allproject',
               component: Allproject
+            },
+            {
+              path: 'createproject',
+              name: 'Createproject',
+              component: Createproject
             },
           ]
         },
@@ -161,7 +167,7 @@ function configRoutes () {
             {
               path: 'projectdetail',
               name: 'Projectdetail',
-              component: Mentorprojectdetail
+              component: Projectdetail
             },
           ]
         }
