@@ -12,15 +12,17 @@
                 description="Please name your team."
                 label="Team name"
                 horizontal
-                autocomplete="teamname"
+                autocomplete="teamdetail"
                 v-model="teamdetail.name"
               />
-              <CInput
-                description="Please team type."
-                label="Team type"
+              
+              <CSelect
+                description="If you don’t want unfamiliar people to join the team, please choose private."
                 horizontal
-                autocomplete="teamname"
-                v-model="teamdetail.type"
+                label="Team type"
+                autocomplete="teamtype"
+                :options="teamdetail.options"
+                @change="changeType($event)"
               />
               <CTextarea
                 label="Description"
@@ -52,11 +54,22 @@ export default {
           name:'',
           detail:'',
           type:'',
+          options:[ { value: 'pubilc', label: 'public' }, { value: 'private', label: 'private' } ],
           project_id:''
         }
+
     }
   },
+  created(){
+    var that = this;
+    const project_id = this.$route.query.project_id;
+    that.teamdetail.project_id = project_id;
+  },
   methods: {
+    changeType(event) {
+      this.teamdetail.type = event.target.value; 
+      console.log("the team type is",this.teamdetail.type)
+    },
     createteam: function() {
       var that = this;
       axios.post("http://127.0.0.1:5000/team/create",{
@@ -82,10 +95,7 @@ export default {
       )
     }
   },
-  created(){
-    var that = this;
-    const project_id = this.$route.query.project_id;
-    that.teamdetail.project_id = project_id;
-  }
+  
+  
 }
 </script>
