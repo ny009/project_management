@@ -1,27 +1,30 @@
 
 <template>
   <CRow>
-    <CCol col="12" md="4">
+    <CCol col="12" >
             <CCard>
         <CCardHeader>
           <CIcon name="cil-justify-center"/> Post Announcement
         </CCardHeader>
         <CCardBody>
           <CForm>
-            <CInput placeholder="Title" label="Title" horizontal/>
-            <CInput placeholder="Detail" label="Detail" horizontal/>
-            <CInput placeholder="Term" label="Term" horizontal/>
-            <CInput placeholder="Course" label="Course" horizontal/>
-            <CInput type="date"  label="Start_time" horizontal/>
-            <CInput type="date"  label="End_time" horizontal/>
-            <CButton type="submit" size="sm" color="primary" @click=""><CIcon name="cil-check-circle"/> Submit</CButton>
+            <CInput placeholder="Title" label="Title" horizontal v-model="notification.name" />
+            <CTextarea placeholder="Detail" label="Detail" horizontal v-model="notification.detail" />
+            <CSelect
+                label="Project"
+                description="choose project"
+                horizontal
+                :options="options"
+                @change="changeProject($event)"
+              />
+            <CButton type="submit" size="sm" color="primary" @click="createnotification()"><CIcon name="cil-check-circle"/> Submit</CButton>
           </CForm>
         </CCardBody>
       </CCard>
 
     </CCol>
     <template v-for="n in notification">
-    <CCol col="12" md="6">
+    <CCol col="12">
       <CCard>
         <CCardHeader>
           <CIcon name="cil-justify-center"/> {{n.author}} <small>{{n.time}}</small>
@@ -46,17 +49,65 @@ export default {
   name: 'Alerts',
   data () {
     return {
-      notification:[]
+      options:[],
+      notification:[],
+      project:[],
+      notification:{
+        name:'',
+        detail:"",
+        project_id:"",
+        user_id:"",
+      }
     }
   },
   methods: {
+    changeProject(event) {
+      this.notification.project_id = event.target.value; 
+      console.log("choose ",this.notification.project_id)
+    },
+    createnotification:function () {
+      var self = this;
+      axios.post("http://127.0.0.1:5000/notification/create",{
+        name:self.notification.name,
+        detail:self.notification.detail,
+        project_id:self.notification.project_id,
+        user_id:localStorage.uid
+        
+      },{emulateJSON:true})
+      .then(function(response){
+        if(response.data.status === 'SUCCESS'){
+          alert('SUCCESS');
+          location.reload();
+        }else{
+          alert('FAIL');
+        }
+      },function(error){
+          alert('FAIL');
+      })
+      
+    }
   },
   created(){
     var that = this;
-    axios.get("http://127.0.0.1:5000/notification/student?user_id="+localStorage.uid).then(response=>{
+    this.notification.user_id = localStorage.uid;
+    axios.get("http://127.0.0.1:5000/notification/mentor?user_id="+localStorage.uid).then(response=>{
       var res = response.data;
       console.log(res);
       that.notification = res;
+      //alert(res.length)
+    })
+    axios.get("http://127.0.0.1:5000/project/mentor?user_id="+localStorage.uid).then(response=>{
+      var res = response.data;
+      console.log("project");
+      console.log(res);
+      that.project = res;
+      for(var i = 0; i < res.length; i++){
+        //console.log(that.project[i].name);
+        that.options.push({
+          value:res[i].id,
+          label:res[i].name
+        })
+      }
       //alert(res.length)
     })
   }
