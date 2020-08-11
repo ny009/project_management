@@ -9,9 +9,9 @@
         <CCardBody>
             <CAlert show color="success">
               <h4 class="alert-heading">{{n.name}}</h4>
-              <p><strong>Project Name: </strong>{{n.project_name}}</p>
+              <p><strong>Project Name:</strong>{{p.project_name}}</p>
               <p><strong>Notification Detail:</strong></p>
-              <p>{{n.detail}}</p>
+              <p>{{p.detail}}</p>
             </CAlert>
         </CCardBody>
       </CCard>
