@@ -88,7 +88,7 @@
                 <strong>Start Time: </strong>{{t.start_time}}<br>
                 <strong>End Time: </strong>{{t.end_time}}<br>
                 <strong>Status: </strong>{{t.status}}<br>
-                <CButton size="sm" color="success" class="float-right" @click="finishtask(t.id)">Done</CButton><br>
+                <CButton size="sm" :color="getBadge(t.operation)" class="float-right" @click="finishtask(t.id,t.operation)">{{t.operation}}</CButton><br>
                 
                 <hr>
                 </div>
@@ -133,7 +133,6 @@
               />
               <CInput
                 label="Type"
-                description="meeting or consultation"
                 horizontal
                 v-model="schedule.type"
               />
@@ -170,11 +169,13 @@
                 description="2020-7-2 12:00:00"
                 v-model="task.end_time"
               />
-              <CInput
-                label="Phase ID"
-                description="Phase ID"
-                v-model="task.phase_id"
+              
+              <CSelect
+                label="Phase"
+                description="Phase"
                 horizontal
+                :options="options"
+                @change="changeType($event)"
               />
             <CButton type="submit" size="sm" color="primary" @click="submittask()"><CIcon name="cil-check-circle"/> Submit</CButton>
             <CButton type="reset" size="sm" color="danger"><CIcon name="cil-ban"/> Reset</CButton>
@@ -259,6 +260,7 @@ export default {
   name: 'ListGroups',
   data () {
     return {
+      options:[],
       team_name : '',
       newtag:{
         tag:''
@@ -276,7 +278,9 @@ export default {
         end_time:'',
         team_id:'',
         status:'not finished',
-        phase_id:''
+        phase_id:'',
+        phase:'',
+        operation:''    
       },
       schedule:{
         name:'',
@@ -293,6 +297,20 @@ export default {
     }
   },
   methods:{
+    getBadge (status) {
+      switch (status) {
+        case 'Mark complete': return 'success'
+        case 'Completed': return 'secondary'
+        case 'Pending': return 'warning'
+        case 'Banned': return 'danger'
+        default: 'primary'
+      }
+    },
+    changeType(event) {
+      this.task.phase_id = event.target.value; 
+      this.task.phase = event.target.value; 
+      console.log("the task is belong to ",this.task.phase)
+    },
     submittask:function(){
       var self = this;
       axios.post("http://127.0.0.1:5000/task/add",{
@@ -334,7 +352,11 @@ export default {
           alert('fail add schedule');
       })
     },
-    finishtask:function(id){
+    finishtask:function(id,operation){
+      if(operation == "Completed"){
+        alert("This task already completed!");
+        return 0;
+      }
       var self = this;
       axios.post("http://127.0.0.1:5000/task/finish",{
         task_id:id
@@ -371,7 +393,7 @@ export default {
     const team_id = this.$route.query.team_id;
     that.schedule.team_id = team_id;
     that.task.team_id = team_id;
-    alert(team_id)
+    //alert(team_id)
     axios.get("http://127.0.0.1:5000/team/detail?team_id="+team_id).then(response=>{
       var res = response.data;
       console.log(res);
@@ -379,6 +401,13 @@ export default {
       that.team_tag = res.tag;
       that.project_detail = res.project;
       that.phase = res.phase;
+      for(var i = 0; i < res.phase_all_num; i++){
+        console.log(i);
+        that.options.push({
+          value:res.phase[i].id,
+          label:res.phase[i].name
+        })
+      }
       that.team_name = res.name;
       that.team_detail = res.detail;
       that.schedule = res.schedule
