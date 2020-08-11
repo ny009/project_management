@@ -1,34 +1,37 @@
 <template>
   <div>
-    <template>
     <CCard>
       <CCardBody>
         <CRow>
           <CCol sm="5">
             <h4 id="traffic" class="card-title mb-0">Recent Notification</h4>
-
+            <div class="small text-muted">20200719</div>
+          </CCol>
+          <CCol sm="7" class="d-none d-md-block">
+            <a href="/#/notifications/createannouncement">
+            <CButton color="primary" class="float-right">
+              New Notification
+            </CButton>
+            </a>
           </CCol>
         </CRow>
       </CCardBody>
       <CCardFooter>
         <CRow class="text-center">
-          <CCol md="12">
             <CAlert show color="success">
-              <h4 class="alert-heading">{{notification.name}}</h4>
+              <h4 class="alert-heading">Guest Lecture</h4>
               <p align="left">
-              {{notification.detail}}
-              </p>            
-              <div class="" align="left">
-              <strong>Post Time: </strong>{{notification.time}}<br>
-              <strong>Author: </strong>{{notification.author}}<br>
-              <strong>Project: </strong>{{notification.project_name}}<br>
-            </div>
+              Dear All,<br>
+This week we are privileged to have Dr. Halvard Skogsrud from Google to talk about Go Programming Language.<br>
+Time: Thursday the 16th of July @6:00PM<br>
+Platform: Microsoft Teams<br>
+Talk Summary: The Go programming language was created at Google and revealed to the public in October 2009. Its design choices are considered controversial by many, but it has become a popular choice for open source projects. It is neither object-oriented nor functional, but contains elements of both, as well as an approach to concurrency that sets it apart from most other languages. This talk will give a whirlwind tour of Go, including its design principles and features.<br>
+BIO: Halvard Skogsrud is a Solutions Architect at Google working on Google Cloud. He has more than ten years experience as a software engineer and consultant, and he has a PhD from The University of New South Wales, Australia.
+              </p>
             </CAlert>
-          </CCol>
         </CRow>
       </CCardFooter>
     </CCard>
-    </template>
     <CRow>
       <CCol md="12">
         <CCard>
@@ -110,10 +113,8 @@ export default {
     axios.get("http://127.0.0.1:5000/notification/student?user_id="+localStorage.uid).then(response=>{
       var res = response.data;
       console.log(res);
-      var tem_notification = res.pop();
-      that.notification = tem_notification;
+      that.notification = res[-1];
       //alert(res.length)
-      console.log(that.notification);
     })
   }
 }

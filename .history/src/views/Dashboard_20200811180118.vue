@@ -18,10 +18,10 @@
               <p align="left">
               {{notification.detail}}
               </p>            
-              <div class="" align="left">
-              <strong>Post Time: </strong>{{notification.time}}<br>
-              <strong>Author: </strong>{{notification.author}}<br>
-              <strong>Project: </strong>{{notification.project_name}}<br>
+              <div class="text-muted">
+              <strong>Post Time:</strong>{{notification.time}}<br>
+              <strong>Author:</strong>{{notification.author}}<br>
+              <strong>Project:</strong>{{notification.project_name}}<br>
             </div>
             </CAlert>
           </CCol>

@@ -18,7 +18,7 @@
               <p align="left">
               {{notification.detail}}
               </p>            
-              <div class="" align="left">
+              <div class="">
               <strong>Post Time: </strong>{{notification.time}}<br>
               <strong>Author: </strong>{{notification.author}}<br>
               <strong>Project: </strong>{{notification.project_name}}<br>

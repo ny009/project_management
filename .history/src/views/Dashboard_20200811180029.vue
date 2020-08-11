@@ -6,7 +6,11 @@
         <CRow>
           <CCol sm="5">
             <h4 id="traffic" class="card-title mb-0">Recent Notification</h4>
-
+            <div class="text-muted">
+              <strong>Post Time:</strong>{{notification.time}}<br>
+              <strong>Author:</strong>{{notification.author}}<br>
+              <strong>Project:</strong>{{notification.project_name}}<br>
+            </div>
           </CCol>
         </CRow>
       </CCardBody>
@@ -17,12 +21,7 @@
               <h4 class="alert-heading">{{notification.name}}</h4>
               <p align="left">
               {{notification.detail}}
-              </p>            
-              <div class="" align="left">
-              <strong>Post Time: </strong>{{notification.time}}<br>
-              <strong>Author: </strong>{{notification.author}}<br>
-              <strong>Project: </strong>{{notification.project_name}}<br>
-            </div>
+              </p>
             </CAlert>
           </CCol>
         </CRow>
