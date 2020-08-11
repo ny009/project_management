@@ -85,7 +85,6 @@ export default {
       { key: 'detail', label: 'Detail', _style:'min-width:200px'},
       { key: 'num_member', label: 'Number of team members'},
       { key: 'tag',label: 'Team'},
-      { key: 'type',label: 'Type'},
       { key: 'status', _style:'min-width:100px;' },
       
       { key: 'join',label: 'Action'},
@@ -112,10 +111,10 @@ export default {
           that.tableItems[i]['team_id'] = that.tableItems[i]['id'];
           that.tableItems[i]['id'] = i;
           if(that.tableItems[i]['type'] == "public" ){
-            that.tableItems[i]['status'] = "Active";
+            that.tableItems[i]['status'] = "public";
             that.tableItems[i]['join'] = "Join";
           } else{
-            that.tableItems[i]['status'] = "Inactive";
+            that.tableItems[i]['status'] = "private";
             that.tableItems[i]['join'] = "";
           }
 
@@ -149,8 +148,8 @@ export default {
     },
     getBadge (status) {
       switch (status) {
-        case 'Active': return 'success'
-        case 'Inactive': return 'secondary'
+        case 'public': return 'success'
+        case 'private': return 'secondary'
         case 'Pending': return 'warning'
         case 'Banned': return 'danger'
         default: 'primary'
