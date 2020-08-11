@@ -17,21 +17,7 @@
                 <template v-for="tag in team_tag">
                  {{tag}}
                 </template>
-                <div>
-                  <CForm :model = "newtag">
-                    <CRow>
-                      <CCol sm="2">
-                        <strong>ADD TAG </strong>
-                      </CCol>
-                    <CCol sm="4">
-                    <CInput v-model="newtag.tag" horizontal />
-                    </CCol>
-                    <CCol sm="1">
-                    <CButton color="primary" size="sm" @click="addtag()">ADD</CButton>
-                    </CCol>
-                    </CRow>
-                  </CForm>
-                </div>
+
                 </div>
                 
               </CTab>
@@ -186,6 +172,30 @@
             </CCard>
     </CCol>
       <CCol md="3">
+          <CCard>
+          <CCardHeader>
+            <CIcon name="cil-justify-center"/><strong>Add Tag </strong>
+          </CCardHeader>
+          <CCardBody>
+                <div>
+                  <CForm :model = "newtag">
+                    <CInput v-model="newtag.tag" label="Tag"/>
+                    <CButton color="primary" size="sm" @click="addtag()">ADD</CButton>
+                  </CForm>
+                </div>
+          </CCardBody>
+        </CCard>
+          <CCard>
+          <CCardHeader>
+            <CIcon name="cil-justify-center"/><strong>Invite Team Members </strong>
+          </CCardHeader>
+          <CCardBody>
+            <CForm :model = "inviteemail">
+              <CInput label="Email" v-model="inviteemail.email"/>
+               <CButton size="sm" color="primary" @click="invite()">INVITE</CButton>
+            </CForm>
+          </CCardBody>
+        </CCard>
         <CCard>
           <CCardHeader>
             <CIcon name="cil-justify-center"/><strong> Phase Due </strong>
@@ -260,6 +270,10 @@ export default {
   name: 'ListGroups',
   data () {
     return {
+      inviteemail:{
+        team_id:'',
+        email:''
+      },
       options:[],
       team_name : '',
       newtag:{
@@ -386,6 +400,22 @@ export default {
       },function(error){
           alert('fail add');
       })
+    },
+    invite:function(){
+      var self = this;
+      axios.post("http://127.0.0.1:5000/team/invite",{
+        team_id:self.task.team_id,
+        eamil:self.inviteemail.email
+      },{emulateJSON:true})
+      .then(function(response){
+        if(response.data.status === 'SUCCESS'){
+          alert('invite successfully');
+        }else{
+          alert(response.data.status);
+        }
+      },function(error){
+          alert('fail add');
+      })
     }
   },
   created(){
@@ -393,6 +423,7 @@ export default {
     const team_id = this.$route.query.team_id;
     that.schedule.team_id = team_id;
     that.task.team_id = team_id;
+    that.inviteemail.team_id = team_id;
     //alert(team_id)
     axios.get("http://127.0.0.1:5000/team/detail?team_id="+team_id).then(response=>{
       var res = response.data;
