@@ -14,35 +14,37 @@
             <CTabs>
               <template v-for="p in a.phase_info">
               <CTab :title="p.name">
+                <template>
+                  <CRow>
+                    <CCol col="12" sm="6">
+                      <CCallout color="info">
+                        <small class="text-muted">Start Time: </small><br>
+                        <strong class="h4">{{p.start_time}}</strong>
+                      </CCallout>
+                    </CCol>
+                    <CCol col="12" sm="6">
+                      <CCallout color="danger">
+                        <small class="text-muted">Recurring Clients</small><br>
+                        <strong class="h4">22,643</strong>
+                      </CCallout>
+                    </CCol>
+                  </CRow>
+                </template>
                 <strong>Start Time: </strong>{{p.start_time}}<br>
                 <strong>End Time: </strong>{{p.end_time}}<br>
                 <strong>The Number Of Team: </strong>{{p.all_team_num}}<br>
-                <strong>Finished Team:</strong>{{p.submit_team_num}}<br>
-                <strong>Submit Progress:</strong>
+                <strong>Finished Team: </strong>{{p.submit_team_num}}<br>
+                <strong>Submit Progress: </strong>
                 <CProgress
                   :value="p.submit_rate"
                   :color="color(p.submit_rate)"
                   animated
                   show-value
                   style="height:20px;"
-                  class="mt-1"
                 />
-                <br>
-              <CButton @click="collapse = !collapse" color="primary" class="mb-2" size="sm">
-                Show Team
-              </CButton>
-              <br><br>
+                <template>
 
-              <CCollapse :show="collapse" :duration="400">
-              <CCard body-wrapper>
-                <div v-for="t in p.team_info">
-                  <strong>Team Name: </strong>{{t.name}},<strong>Status: </strong>{{t.status}}
-                </div>
-              </CCard>
-            </CCollapse>
-              <CButton color="primary" class="mb-2" size="sm">
-                Collect ALL Submitte File
-              </CButton>
+                </template>
               </CTab>
               </template>
             </CTabs>
@@ -61,24 +63,11 @@ export default {
   name: 'Forms',
   data () {
     return {
-      allphasedetail:[],
-      collapse:false
+      allphasedetail:[]
     }
   },
   methods: {
-    color (value) {
-      let $color
-      if (value <= 25) {
-        $color = 'info'
-      } else if (value > 25 && value <= 50) {
-        $color = 'success'
-      } else if (value > 50 && value <= 75) {
-        $color = 'warning'
-      } else if (value > 75 && value <= 100) {
-        $color = 'danger'
-      }
-      return $color
-    }
+
   },
   created(){
     var that = this;

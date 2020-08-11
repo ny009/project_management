@@ -27,12 +27,9 @@
                   style="height:20px;"
                   class="mt-1"
                 />
-                <br>
               <CButton @click="collapse = !collapse" color="primary" class="mb-2" size="sm">
-                Show Team
+                Open
               </CButton>
-              <br><br>
-
               <CCollapse :show="collapse" :duration="400">
               <CCard body-wrapper>
                 <div v-for="t in p.team_info">
@@ -40,9 +37,6 @@
                 </div>
               </CCard>
             </CCollapse>
-              <CButton color="primary" class="mb-2" size="sm">
-                Collect ALL Submitte File
-              </CButton>
               </CTab>
               </template>
             </CTabs>
