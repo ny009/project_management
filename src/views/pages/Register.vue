@@ -39,15 +39,16 @@
                 >
                  
                 </CInput>
-                <CInput
+              
+                <CSelect
                   placeholder="role"
                   type="role"
                   autocomplete="role"
                   prepend="R"
-                  v-model="registerForm.role"
-                >
-                 
-                </CInput>
+                  :options="registerForm.options"
+                  @change="changeRole($event)"
+                />
+
                 <CButton color="success" block @click="onSubmit()">Create Account</CButton>
               </CForm>
             </CCardBody>
@@ -68,7 +69,8 @@ export default {
         username:'',
         email:'',
         password:'',
-        role:''
+        role:'',
+        options:[ { value: 'student', label: 'student' }, { value: 'mentor', label: 'mentor' } ]
       }
     }
   },
@@ -95,7 +97,11 @@ export default {
         alert('fail');
         console.log(error);
       })
-    }
+    },
+    changeRole(event) {
+             this.registerForm.role = event.target.value; 
+             console.log("the role is",this.registerForm.role)
+    },
   }
 }
 </script>
