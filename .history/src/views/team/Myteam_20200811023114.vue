@@ -43,15 +43,14 @@
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value=(p.finished_task_num/p.all_task_num)*100
+          :value="100"
           color="success"
           class="mb-2"
         />
         <strong> Due Date: </strong>{{p.end_time}} <strong>Status: </strong>{{p.status}}
         </div>
-        <hr>
         </div>
-        
+        <hr>
       </CCardBody>
     </CCard>
     <CCard>

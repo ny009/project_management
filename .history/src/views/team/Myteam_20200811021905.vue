@@ -18,15 +18,12 @@
               </CTab>
               <CTab title="Team Project" active>
                 <br>
-                <div>
-                <strong>Project Name: </strong>{{project_detail.name}}<br>
-                <strong>Course: </strong>{{project_detail.course}}<br>
-                <strong>Term: </strong>{{project_detail.term}}<br>
-                <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
-                <strong>Project Start Date: </strong>{{project_detail.start_time}}<br>
-                <strong>Project End Date: </strong>{{project_detail.end_time}}<br>
-                <strong>Project Description: </strong>{{project_detail.detail}}<br>
-                </div>
+                <p>
+                <strong>Project Name: </strong>Project-based Learning Dojo<br>
+                <strong>Project Start date: </strong>2020-05-01<br>
+                <strong>Project End date: </strong>2020-08-01<br>
+                <strong>Project Description: </strong>This project focuses on providing features that are specific to students-mentor meetings, student meetings, project activity review and planning  (not limited to) : (i) managing regular project member meetings including explicit meeting agenda and moderation, (ii) management of project goals, milestones and progress, (iii) providing meeting summary notes including to do tasks and integration with calendar and task management services, (iii) managing regular reviews and feedbacks by mentors, partners and peers  forming a project community, (iv) providing regular encouragement of group members for progress, contributions and positive attitude, (v) showcasing student progress through video presentations, (vi) organizing scheduled consultations. <br>
+                </p>
               </CTab>
             </CTabs>
           </CCardBody>
@@ -37,21 +34,61 @@
         <strong> Milestone Progress </strong>
       </CCardHeader>
       <CCardBody>
-      <div class="row mb-1" v-for="p in phase">
+      <div class="row mb-1">
       <div class="col-sm-2">
-      <strong>{{p.name}}</strong>
+      <strong> Phase 1 Report: </strong>
       </div>
       <div class="col-sm-10 pt-1">
         <CProgress
-          :value=(p.finished_task_num/p.all_task_num)*100
+          :value="100"
           color="success"
           class="mb-2"
         />
-        <strong> Due Date: </strong>{{p.end_time}} <strong>Status: </strong>{{p.status}}
+        <strong> Due Date: </strong>2020-07-01 <strong>Status: </strong>finished <strong>Mark: </strong>80
+        </div>
         </div>
         <hr>
+      <div class="row mb-1">
+      <div class="col-sm-2">
+      <strong> Phase 2 presentation: </strong>
+      </div>
+      <div class="col-sm-10 pt-1">
+        <CProgress
+          :value="50"
+          color="info"
+          class="mb-2"
+        />
+        <strong> Due Date: </strong>2020-07-30 <strong>Status: </strong>processing <strong>Mark: </strong>not yet marked
         </div>
-        
+        </div>
+        <hr>
+      <div class="row mb-1">
+      <div class="col-sm-2">
+      <strong> Peer Review: </strong>
+      </div>
+      <div class="col-sm-10 pt-1">
+        <CProgress
+          :value="0"
+          color="warning"
+          class="mb-2"
+        />
+        <strong> Due Date: </strong>2020-08-03 <strong>Status: </strong>processing <strong>Mark: </strong>not yet marked
+        </div>
+        </div>
+        <hr>
+      <div class="row mb-1">
+      <div class="col-sm-2">
+      <strong>Phase 3: </strong>
+      </div>
+      <div class="col-sm-10 pt-1">
+        <CProgress
+          :value="0"
+          color="danger"
+          class="mb-2"
+        />
+        <strong> Due Date: </strong>2020-08-20 <strong>Status: </strong>not yet started <strong>Mark: </strong>not yet marked
+        </div>
+        </div>
       </CCardBody>
     </CCard>
     <CCard>
@@ -328,8 +365,8 @@ export default {
       that.team_tag = res.tag;
       that.project_detail = res.project;
       that.phase = res.phase;
-      that.team_name = res.name;
-      that.team_detail = res.detail;
+      that.team_tag = res.name;
+      that.team_tag = res.tag;
       that.schedule = res.schedule
     })
   }
