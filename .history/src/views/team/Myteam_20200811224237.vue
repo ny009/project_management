@@ -80,7 +80,7 @@
                 </div>
                 <div>
                   <h4>Submit {{p.name}}</h4>
-                  <p><strong>Submit Status: </strong>{{p.phase_submission}}</p>
+                  <p><strong>Submit Status</strong>{{p.phase_submission}}</p>
                   <CForm>
                     <CRow>
                       <CCol>
