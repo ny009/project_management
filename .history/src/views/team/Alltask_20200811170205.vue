@@ -35,7 +35,7 @@ export default {
         { key: 'detail', label: 'Detail'}, 
         { key: 'start_time', label: 'Start Time'}, 
         { key: 'end_time', label: 'End Time'}, 
-        { key: 'type', label: 'Type'}, 
+        { key: 'status', label: 'Status'}, 
 
       ],
       tasktable:[
@@ -44,7 +44,7 @@ export default {
         { key: 'detail', label: 'Detail'}, 
         { key: 'start_time', label: 'Start Time'}, 
         { key: 'end_time', label: 'End Time'}, 
-        { key: 'status', label: 'Status'}, 
+        { key: 'type', label: 'Type'}, 
       ],
 
     }

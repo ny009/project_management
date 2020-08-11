@@ -45,11 +45,33 @@ BIO: Halvard Skogsrud is a Solutions Architect at Google working on Google Cloud
                   <CCol sm="6">
                     <CCallout color="info">
                       <small class="text-muted">Processing</small><br>
-                      <strong class="h4">{{project_num}}</strong>
+                      <strong class="h4">1</strong>
+                    </CCallout>
+                  </CCol>
+                  <CCol sm="6">
+                    <CCallout color="warning">
+                      <small class="text-muted">Planning</small><br>
+                      <strong class="h4">0</strong>
                     </CCallout>
                   </CCol>
                 </CRow>
 
+              </CCol>
+              <CCol sm="12" lg="6">
+                <CRow>
+                  <CCol sm="6">
+                    <CCallout color="success">
+                      <small class="text-muted">Finish</small><br>
+                      <strong class="h4">0</strong>
+                    </CCallout>
+                  </CCol>
+                  <CCol sm="6">
+                    <CCallout color="danger">
+                      <small class="text-muted">Over Due</small><br>
+                      <strong class="h4">0</strong>
+                    </CCallout>
+                  </CCol>
+                </CRow>
               </CCol>
             </CRow>
            <CDataTable
@@ -60,6 +82,7 @@ BIO: Halvard Skogsrud is a Solutions Architect at Google working on Google Cloud
               head-color="light"
               no-sorting
             >
+
             </CDataTable>
           </CCardBody>
         </CCard>
@@ -73,15 +96,15 @@ export default {
   name: 'Dashboard',
   data () {
     return {
-      project_num:0,
       team_info: [],
       team_info_table: [
         { key: 'name' },
-        { key: 'num_member' , label: 'Member Number'},
-        { key: 'project_name', label: 'Project Name', _classes: 'text-center' },
-        { key: 'course', label: 'Course', _classes: 'text-center' },
-        { key: 'all_phase_num', label: 'All Phase' },
-        { key: 'finished_phase_num', label: 'Finished Phase' },
+        { key: 'team_member' },
+        { key: 'project_name', _classes: 'text-center' },
+        { key: 'process' },
+        { key: 'course', label: 'Due date', _classes: 'text-center' },
+        { key: 'all_phase_num' },
+        { key: 'finished_phase_num' },
       ]
     }
   },
@@ -106,8 +129,6 @@ export default {
       var res = response.data;
       console.log(res);
       that.team_info = res;
-      //alert(res.length)
-      that.project_num = res.length;
     })
   }
 }

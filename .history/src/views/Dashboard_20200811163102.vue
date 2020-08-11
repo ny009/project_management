@@ -77,11 +77,11 @@ export default {
       team_info: [],
       team_info_table: [
         { key: 'name' },
-        { key: 'num_member' , label: 'Member Number'},
-        { key: 'project_name', label: 'Project Name', _classes: 'text-center' },
-        { key: 'course', label: 'Course', _classes: 'text-center' },
-        { key: 'all_phase_num', label: 'All Phase' },
-        { key: 'finished_phase_num', label: 'Finished Phase' },
+        { key: 'num_member' },
+        { key: 'project_name', _classes: 'text-center' },
+        { key: 'course', label: 'course', _classes: 'text-center' },
+        { key: 'all_phase_num' },
+        { key: 'finished_phase_num' },
       ]
     }
   },

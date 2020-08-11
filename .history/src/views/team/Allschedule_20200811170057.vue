@@ -3,15 +3,15 @@
   <CCard>
     <CCardHeader>
       <slot name="header">
-        <CIcon name="cil-grid"/><strong>All My Task</strong>
+        <CIcon name="cil-grid"/><strong>Schedule</strong>
       </slot>
     </CCardHeader>
     <CCardBody>
       <CDataTable
         class="mb-0 table-outline"
         hover
-        :items="taskitem"
-        :fields="tasktable"
+        :items="scheduleitem"
+        :fields="scheduletable"
         head-color="light"
         no-sorting
       >
@@ -35,7 +35,7 @@ export default {
         { key: 'detail', label: 'Detail'}, 
         { key: 'start_time', label: 'Start Time'}, 
         { key: 'end_time', label: 'End Time'}, 
-        { key: 'type', label: 'Type'}, 
+        { key: 'status', label: 'Status'}, 
 
       ],
       tasktable:[
@@ -44,7 +44,7 @@ export default {
         { key: 'detail', label: 'Detail'}, 
         { key: 'start_time', label: 'Start Time'}, 
         { key: 'end_time', label: 'End Time'}, 
-        { key: 'status', label: 'Status'}, 
+        { key: 'type', label: 'Type'}, 
       ],
 
     }
