@@ -125,6 +125,10 @@ export default {
   methods:{
     JoinTeam:function(team_id,type){
       //alert(team_id);
+      if(type == "private"){
+        alert("This is a private team, please contact team members if you want to join.");
+        return 0;
+      }
       var that = this;
       axios.post('http://127.0.0.1:5000/team/join',{
         user_id: localStorage.uid,
