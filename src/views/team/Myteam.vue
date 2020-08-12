@@ -475,7 +475,7 @@ export default {
             'Content-Type': 'multipart/form-data'
           }
         }
-        axios.post('http://baidu.com:5000/phase/submit', formData, config).then(function (response) {
+        axios.post('http://127.0.0.1:5000/phase/submit', formData, config).then(function (response) {
                   alert('success');
                   location.reload();
         },function(error){
